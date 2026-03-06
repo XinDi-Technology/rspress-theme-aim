@@ -2,36 +2,36 @@
 pageType: home
 
 hero:
-  name: My Site
-  text: A cool website!
-  tagline: This is the tagline
+  name: 人工智能制造 · Rspress Theme AIm
+  text: 零本地环境 · GitHub Pages 一键部署的 Rspress 文档站模板
+  tagline: 只用浏览器就能搭建和维护的现代文档站
   actions:
     - theme: brand
       text: Quick Start
       link: /guide/
     - theme: alt
       text: GitHub
-      link: https://github.com/web-infra-dev/rspress
+      link: https://xindi-technology.github.io/rspress-theme-aim
   image:
     src: /rspress-icon.png
     alt: Logo
 features:
-  - title: Blazing fast build speed
-    details: The core compilation module is based on the Rust front-end toolchain, providing a more ultimate development experience.
+  - title: 零本地环境
+    details: 完全通过 GitHub 网页 + GitHub Actions 完成搭建与部署。
     icon: 🏃🏻‍♀️
-  - title: Support for MDX content writing
-    details: MDX is a powerful way to write content, allowing you to use React components in Markdown.
+  - title: 基于 Rspress V2
+    details: 享受高性能构建、MDX 支持、全文搜索等现代能力。
     icon: 📦
-  - title: Built-in full-text search
-    details: Automatically generates a full-text search index for you during construction, providing out-of-the-box full-text search capabilities.
+  - title: GitHub Pages 自动部署
+    details: 每次提交自动构建并发布。
     icon: 🎨
-  - title: Simpler I18n solution
-    details: With the built-in I18n solution, you can easily provide multi-language support for documents or components.
+  - title: 可扩展
+    details: 后续可按需接入自定义主题、CSS 变量和插件生态。
     icon: 🌍
-  - title: Static site generation
-    details: In production, it automatically builds into static HTML files, which can be easily deployed anywhere.
+  - title: 通过中国合规
+    details: 已经集成中国的ICP备案、公安联网备案显示。
     icon: 🌈
-  - title: Providing multiple custom capabilities
-    details: Through its extension mechanism, you can easily extend theme UI and build process.
+  - title: 适用场景广泛
+    details: 个人/团队的技术文档、开源项目的使用手册、产品说明书与 API 文档或课程/培训资料站点。
     icon: 🔥
 ---
