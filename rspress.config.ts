@@ -4,7 +4,7 @@ import { defineConfig } from '@rspress/core';
 export default defineConfig({
   base: '/rspress-theme-aim/',
   root: path.join(__dirname, 'docs'),
-  title: 'My Site',
+  title: '人工智能制造 · Rspress Theme AIm',
   icon: '/rspress-icon.png',
   logo: {
     light: '/rspress-light-logo.png',
@@ -15,7 +15,7 @@ export default defineConfig({
       {
         icon: 'github',
         mode: 'link',
-        content: 'https://github.com/web-infra-dev/rspress',
+        content: 'https://xindi-technology.github.io/rspress-theme-aim',
       },
     ],
   },
