@@ -12,9 +12,6 @@ hero:
     - theme: alt
       text: GitHub
       link: https://xindi-technology.github.io/rspress-theme-aim
-  image:
-    src: /rspress-icon.png
-    alt: Logo
 features:
   - title: 零本地环境
     details: 完全通过 GitHub 网页 + GitHub Actions 完成搭建与部署。
