@@ -5,10 +5,6 @@ export default defineConfig({
   base: '/rspress-theme-aim/',
   root: path.join(__dirname, 'docs'),
   title: '人工智能制造 · Rspress Theme AIm',
-  icon: '/rspress-icon.png',
-  logo: {
-    light: '/rspress-light-logo.png',
-    dark: '/rspress-dark-logo.png',
   },
   themeConfig: {
     socialLinks: [
