@@ -14,4 +14,5 @@ export default defineConfig({
       },
     ],
   },
+  theme: path.join(__dirname, 'theme/index.tsx'),
 });
