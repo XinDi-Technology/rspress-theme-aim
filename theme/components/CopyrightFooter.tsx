@@ -6,6 +6,7 @@ interface ThemeConfig extends DefaultThemeConfig {
   companyUrl?: string;
   startYear?: number;
   endYear?: number;
+  icpNumber?: string;
 }
 
 export function CopyrightFooter() {
@@ -22,6 +23,9 @@ export function CopyrightFooter() {
   
   // 公司 URL：优先使用配置，其次使用当前域名
   const companyUrl = themeConfig?.companyUrl || (typeof window !== 'undefined' ? window.location.origin : '');
+
+  // ICP 备案号
+  const icpNumber = themeConfig?.icpNumber;
 
   // 构建年份显示文本
   const yearText = startYear === endYear ? String(startYear) : `${startYear}-${endYear}`;
@@ -43,6 +47,18 @@ export function CopyrightFooter() {
           <span>{companyName}</span>
         )}
       </div>
+      {icpNumber && (
+        <div className="rspress-copyright-icp">
+          <a 
+            href="https://beian.miit.gov.cn/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="rspress-copyright-link"
+          >
+            {icpNumber}
+          </a>
+        </div>
+      )}
     </div>
   );
 }
