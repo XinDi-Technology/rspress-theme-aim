@@ -19,6 +19,6 @@ export default defineConfig({
     startYear: 2025,  // 可选，默认为 2020
     // endYear: 2023,    // 可选，默认为当前年份
     // ICP备案配置
-    icpNumber: '鲁ICP备12345678号-1',  // 可选，为空时不显示 ICP 备案信息
+    icpNumber: '',  // 可选，为空时不显示 ICP 备案信息
   },
 });
