@@ -1,4 +1,5 @@
 import { usePageData } from '@rspress/core/runtime';
+import { withBase } from '@rspress/core/runtime';
 import type { DefaultThemeConfig } from '@rspress/core';
 
 interface ThemeConfig extends DefaultThemeConfig {
@@ -75,7 +76,7 @@ export function CopyrightFooter() {
       {gonganNumber && gonganUrl && (
         <div className="rspress-copyright-gongan">
           <img 
-            src="/gongan-beian.png" 
+            src={withBase('/gongan-beian.png')} 
             alt="公安备案" 
             className="rspress-gongan-icon"
           />
