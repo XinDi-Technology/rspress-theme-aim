@@ -10,7 +10,7 @@ export default defineConfig({
       {
         icon: 'github',
         mode: 'link',
-        content: 'https://xindi-technology.github.io/rspress-theme-aim',
+        content: 'https://github.com/XinDi-Technology/rspress-theme-aim',
       },
     ],
   },
