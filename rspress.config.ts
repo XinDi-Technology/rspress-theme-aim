@@ -22,5 +22,9 @@ export default defineConfig({
     icpNumber: '',  // 可选，为空时不显示 ICP 备案信息
     // 公安联网备案配置
     gonganNumber: '',  // 可选，为空时不显示公安备案信息，默认为：鲁公网安备12345678912345号
+    // 编辑此页链接配置
+    editLink: {
+      docRepoBaseUrl: 'https://github.com/XinDi-Technology/rspress-theme-aim/tree/main/docs',
+    },
   },
 });
