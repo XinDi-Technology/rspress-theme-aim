@@ -21,6 +21,25 @@
   margin-top: 8px;
 }
 
+/* 公安备案信息 */
+.rspress-copyright-gongan {
+  text-align: center;
+  font-size: 14px;
+  color: var(--rp-c-text-2);
+  line-height: 1.5;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.rspress-gongan-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+}
+
 .rspress-copyright-link {
   color: var(--rp-c-brand);
   text-decoration: none;

@@ -20,5 +20,7 @@ export default defineConfig({
     // endYear: 2023,    // 可选，默认为当前年份
     // ICP备案配置
     icpNumber: '',  // 可选，为空时不显示 ICP 备案信息
+    // 公安联网备案配置
+    gonganNumber: '鲁公网安备12345678912345号',  // 可选，为空时不显示公安备案信息
   },
 });

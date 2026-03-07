@@ -7,6 +7,7 @@ interface ThemeConfig extends DefaultThemeConfig {
   startYear?: number;
   endYear?: number;
   icpNumber?: string;
+  gonganNumber?: string;
 }
 
 export function CopyrightFooter() {
@@ -26,6 +27,18 @@ export function CopyrightFooter() {
 
   // ICP 备案号
   const icpNumber = themeConfig?.icpNumber;
+
+  // 公安备案号
+  const gonganNumber = themeConfig?.gonganNumber;
+  
+  // 提取公安备案号中的数字部分用于查询链接
+  const extractGonganCode = (number: string): string => {
+    const match = number.match(/\d+/);
+    return match ? match[0] : '';
+  };
+  
+  const gonganCode = gonganNumber ? extractGonganCode(gonganNumber) : '';
+  const gonganUrl = gonganCode ? `https://beian.mps.gov.cn/#/query/webSearch?code=${gonganCode}` : '';
 
   // 构建年份显示文本
   const yearText = startYear === endYear ? String(startYear) : `${startYear}-${endYear}`;
@@ -56,6 +69,23 @@ export function CopyrightFooter() {
             className="rspress-copyright-link"
           >
             {icpNumber}
+          </a>
+        </div>
+      )}
+      {gonganNumber && gonganUrl && (
+        <div className="rspress-copyright-gongan">
+          <img 
+            src="/gongan-beian.png" 
+            alt="公安备案" 
+            className="rspress-gongan-icon"
+          />
+          <a 
+            href={gonganUrl}
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="rspress-copyright-link"
+          >
+            {gonganNumber}
           </a>
         </div>
       )}
