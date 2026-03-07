@@ -26,5 +26,7 @@ export default defineConfig({
     editLink: {
       docRepoBaseUrl: 'https://github.com/XinDi-Technology/rspress-theme-aim/tree/main/docs',
     },
+    // 最后更新时间配置
+    lastUpdated: true,  // 显示文档最后更新时间
   },
 });
