@@ -1,0 +1,42 @@
+/* 版权信息底部样式 */
+.rspress-copyright-footer {
+  padding: 24px;
+  border-top: 1px solid var(--rp-c-divider-light);
+  background-color: var(--rp-c-bg);
+}
+
+.rspress-copyright-content {
+  text-align: center;
+  font-size: 14px;
+  color: var(--rp-c-text-2);
+  line-height: 1.5;
+}
+
+.rspress-copyright-link {
+  color: var(--rp-c-brand);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.rspress-copyright-link:hover {
+  color: var(--rp-c-brand-dark);
+  text-decoration: underline;
+}
+
+/* 暗色模式适配 */
+.dark .rspress-copyright-footer {
+  border-top-color: var(--rp-c-divider-dark);
+  background-color: var(--rp-c-bg);
+}
+
+.dark .rspress-copyright-content {
+  color: var(--rp-c-text-2);
+}
+
+.dark .rspress-copyright-link {
+  color: var(--rp-c-brand);
+}
+
+.dark .rspress-copyright-link:hover {
+  color: var(--rp-c-brand-light);
+}
