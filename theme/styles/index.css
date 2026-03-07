@@ -69,6 +69,19 @@
   color: var(--rp-c-brand-light);
 }
 
+/* Last Updated 样式 */
+.rspress-doc-footer {
+  color: var(--rp-c-text-1);
+}
+
+.rspress-doc-footer .last-updated {
+  color: var(--rp-c-text-1);
+}
+
+.rspress-doc-footer .last-updated time {
+  color: var(--rp-c-text-1);
+}
+
 /* 确保页面布局正确 */
 #root {
   display: flex;
