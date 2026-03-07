@@ -2,11 +2,12 @@ import { Layout as BasicLayout } from '@rspress/core/theme-original';
 import { CopyrightFooter } from './components/CopyrightFooter';
 import './styles/index.css';
 
-function Layout() {
+function Layout(props: React.ComponentProps<typeof BasicLayout>) {
   return (
-    <BasicLayout
-      afterFooter={<CopyrightFooter />}
-    />
+    <>
+      <BasicLayout {...props} />
+      <CopyrightFooter />
+    </>
   );
 }
 

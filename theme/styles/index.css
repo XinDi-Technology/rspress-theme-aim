@@ -3,6 +3,7 @@
   padding: 24px;
   border-top: 1px solid var(--rp-c-divider-light);
   background-color: var(--rp-c-bg);
+  margin-top: auto;
 }
 
 .rspress-copyright-content {
@@ -39,4 +40,15 @@
 
 .dark .rspress-copyright-link:hover {
   color: var(--rp-c-brand-light);
+}
+
+/* 确保页面布局正确 */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.rspress-doc-layout {
+  flex: 1;
 }

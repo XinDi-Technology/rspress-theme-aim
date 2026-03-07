@@ -1,32 +1,27 @@
 import { usePageData } from '@rspress/core/runtime';
 import type { DefaultThemeConfig } from '@rspress/core';
 
-interface CopyrightConfig {
+interface ThemeConfig extends DefaultThemeConfig {
   companyName?: string;
   companyUrl?: string;
   startYear?: number;
   endYear?: number;
 }
 
-interface ThemeConfig extends DefaultThemeConfig {
-  copyright?: CopyrightConfig;
-}
-
 export function CopyrightFooter() {
-  const { siteData, page } = usePageData();
+  const { siteData } = usePageData();
   const themeConfig = siteData.themeConfig as ThemeConfig;
-  const copyright = themeConfig?.copyright;
 
   // 获取默认值
   const currentYear = new Date().getFullYear();
-  const startYear = copyright?.startYear ?? 2020;
-  const endYear = copyright?.endYear ?? currentYear;
+  const startYear = themeConfig?.startYear ?? 2020;
+  const endYear = themeConfig?.endYear ?? currentYear;
   
-  // 公司名称：优先使用配置，其次使用站点 title，最后使用域名
-  const companyName = copyright?.companyName || siteData.title || 'A公司';
+  // 公司名称：优先使用配置，其次使用站点 title
+  const companyName = themeConfig?.companyName || siteData.title || 'A公司';
   
   // 公司 URL：优先使用配置，其次使用当前域名
-  const companyUrl = copyright?.companyUrl || (typeof window !== 'undefined' ? window.location.origin : '');
+  const companyUrl = themeConfig?.companyUrl || (typeof window !== 'undefined' ? window.location.origin : '');
 
   // 构建年份显示文本
   const yearText = startYear === endYear ? String(startYear) : `${startYear}-${endYear}`;
