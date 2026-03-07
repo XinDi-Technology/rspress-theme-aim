@@ -1,20 +1,14 @@
-import Theme from '@rspress/core/theme';
+import { Layout as BasicLayout } from '@rspress/core/theme-original';
 import { CopyrightFooter } from './components/CopyrightFooter';
 import './styles/index.css';
 
-const { Layout } = Theme;
-
-function CustomLayout() {
+function Layout() {
   return (
-    <Layout
+    <BasicLayout
       afterFooter={<CopyrightFooter />}
     />
   );
 }
 
-export default {
-  ...Theme,
-  Layout: CustomLayout,
-};
-
-export * from '@rspress/core/theme';
+export { Layout };
+export * from '@rspress/core/theme-original';
