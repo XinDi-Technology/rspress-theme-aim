@@ -69,9 +69,10 @@
   color: var(--rp-c-brand-light);
 }
 
-/* Last Updated 样式 - 使用 !important 强制覆盖 */
-.rspress-doc-footer,
-.rspress-doc-footer * {
+/* Last Updated 样式 */
+.rp-last-updated,
+.rp-last-updated p,
+.rp-last-updated span {
   color: var(--rp-c-text-1) !important;
 }
 
