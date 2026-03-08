@@ -58,11 +58,14 @@ jobs:
 
       - name: Create GitHub Release
         uses: actions/github-script@v6
+        env:
+          VERSION: ${{ steps.extract_version.outputs.version }}
+          NOTES: ${{ steps.get_release_notes.outputs.notes }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const version = '${{ steps.extract_version.outputs.version }}';
-            const notes = '${{ steps.get_release_notes.outputs.notes }}';
+            const version = process.env.VERSION;
+            const notes = process.env.NOTES;
             
             await github.rest.repos.createRelease({
               owner: context.repo.owner,

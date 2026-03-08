@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.4.0] - 2026-03-08
+## [1.5.0] - 2026-03-08
 
 ### Added
 - 初始版本发布
@@ -27,8 +27,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 版本发布错误
 - 版本发布页面changelog错误
 
-[Unreleased]: https://github.com/XinDi-Technology/rspress-theme-aim/compare/v1.4.0...HEAD
-[1.4.0]: https://github.com/XinDi-Technology/rspress-theme-aim/releases/tag/v1.4.0
+[Unreleased]: https://github.com/XinDi-Technology/rspress-theme-aim/compare/v1.5.0...HEAD
+[1.5.0]: https://github.com/XinDi-Technology/rspress-theme-aim/releases/tag/v1.5.0
 
 ## [1.0.0] - 2026-03-08
 
