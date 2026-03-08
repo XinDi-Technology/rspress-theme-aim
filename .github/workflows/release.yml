@@ -46,7 +46,9 @@ jobs:
         run: |
           # Extract release notes from CHANGELOG.md
           VERSION=${{ steps.extract_version.outputs.version }}
-          NOTES=$(awk '/^## \['"$VERSION"'\]/ {flag=1; next} /^## \[/ {flag=0} flag' CHANGELOG.md)
+          # Remove v prefix from version
+          VERSION_WITHOUT_V=${VERSION#v}
+          NOTES=$(awk '/^## \['"$VERSION_WITHOUT_V"'\]/ {flag=1; next} /^## \[/ {flag=0} flag' CHANGELOG.md)
           if [ -z "$NOTES" ]; then
             NOTES="Automated release for $VERSION"
           fi
