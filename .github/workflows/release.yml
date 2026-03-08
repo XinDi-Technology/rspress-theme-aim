@@ -44,16 +44,15 @@ jobs:
       - name: Get release notes from CHANGELOG.md
         id: get_release_notes
         run: |
-          # Extract release notes from CHANGELOG.md
           VERSION=${{ steps.extract_version.outputs.version }}
-          # Remove v prefix from version
           VERSION_WITHOUT_V=${VERSION#v}
           
-          # Check if the version exists in CHANGELOG.md
-          if grep -q "## \[""$VERSION_WITHOUT_V""\]" CHANGELOG.md; then
-            # Extract the version section using a simple approach
-            # This will capture everything from the version header to the next version header
-            NOTES=$(sed -n "/## \[""$VERSION_WITHOUT_V""\]/,/## \[/p" CHANGELOG.md | sed '1d;$d')
+          if grep -q "## \[$VERSION_WITHOUT_V\]" CHANGELOG.md; then
+            NOTES=$(sed -n "/## \[$VERSION_WITHOUT_V\]/,/## \[/p" CHANGELOG.md | sed '1d;$d')
+            VERSION_LINK=$(grep "\[$VERSION_WITHOUT_V\]:" CHANGELOG.md | head -1)
+            if [ -n "$VERSION_LINK" ]; then
+              NOTES=$(printf '%s\n\n%s' "$NOTES" "$VERSION_LINK")
+            fi
           else
             NOTES="Automated release for $VERSION"
           fi
