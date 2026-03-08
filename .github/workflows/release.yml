@@ -49,10 +49,6 @@ jobs:
           
           if grep -q "## \[$VERSION_WITHOUT_V\]" CHANGELOG.md; then
             NOTES=$(sed -n "/## \[$VERSION_WITHOUT_V\]/,/## \[/p" CHANGELOG.md | sed '1d;$d')
-            VERSION_LINK=$(grep "\[$VERSION_WITHOUT_V\]:" CHANGELOG.md | head -1)
-            if [ -n "$VERSION_LINK" ]; then
-              NOTES=$(printf '%s\n\n%s' "$NOTES" "$VERSION_LINK")
-            fi
           else
             NOTES="Automated release for $VERSION"
           fi
