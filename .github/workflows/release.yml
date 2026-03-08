@@ -53,10 +53,7 @@ jobs:
             BEGIN { flag=0 }
             /^## \[/ {
               if (flag) {
-                # Check if this is the version link line for current version
-                if ($0 ~ "\\[" ver "\\]:") {
-                  print
-                }
+                # Found next version header, stop
                 exit
               }
               if ($0 ~ "\\[" ver "\\]") {
