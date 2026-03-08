@@ -48,24 +48,25 @@ jobs:
           VERSION=${{ steps.extract_version.outputs.version }}
           # Remove v prefix from version
           VERSION_WITHOUT_V=${VERSION#v}
-          # Extract content from version header until next version header, including version links
-          NOTES=$(awk -v ver="$VERSION_WITHOUT_V" '
-            BEGIN { flag=0 }
-            /^## \[/ {
-              if (flag) {
-                # Found next version header, stop
-                exit
-              }
-              if ($0 ~ "\\[" ver "\\]") {
-                flag=1
-              }
-              next
-            }
-            flag { print }
-          ' CHANGELOG.md)
+          
+          # Find the start line of the version section
+          START_LINE=$(grep -n "## \[""$VERSION_WITHOUT_V""\]" CHANGELOG.md | head -1 | cut -d: -f1)
+          
+          # Find the end line (next version section or end of file)
+          END_LINE=$(grep -n "## \[" CHANGELOG.md | grep -A1 "$START_LINE:" | tail -1 | cut -d: -f1)
+          
+          # If no next version found, use end of file
+          if [ -z "$END_LINE" ]; then
+            END_LINE=$(wc -l < CHANGELOG.md)
+          fi
+          
+          # Extract the content between start and end
+          NOTES=$(sed -n "$((START_LINE+1)),$((END_LINE-1))p" CHANGELOG.md)
+          
           if [ -z "$NOTES" ]; then
             NOTES="Automated release for $VERSION"
           fi
+          
           echo "notes<<EOF" >> $GITHUB_OUTPUT
           echo "$NOTES" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
