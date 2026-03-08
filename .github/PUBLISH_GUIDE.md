@@ -33,18 +33,33 @@ X.Y.Z
 
 在 `CHANGELOG.md` 文件中：
 
+**对于初始版本（v1.0.0）**：
+- 直接创建版本条目，不需要 `[Unreleased]` 部分
+
+**对于后续版本**：
 1. 将 `[Unreleased]` 部分的内容移到新的版本条目下
 2. 填写发布日期
 3. 保持 `[Unreleased]` 部分为空，用于记录未来版本的变更
 
-**示例**：
+**示例（v1.0.0 初始版本）**：
 
 ```markdown
-## [1.1.0] - 2026-03-08
+## [1.0.0] - 2026-03-08
+
+### Added
+- 初始版本发布
+- 版权信息底部显示功能
+
+[1.0.0]: https://github.com/XinDi-Technology/rspress-theme-aim/releases/tag/v1.0.0
+```
+
+**示例（v1.1.0 后续版本）**：
+
+```markdown
+## [1.1.0] - 2026-03-09
 
 ### Added
 - 新增 "Edit this page" 编辑此页功能
-- 新增 "Last Updated" 最后更新时间功能
 
 ### Changed
 - 调整 Last Updated 文字颜色为深色
@@ -54,11 +69,9 @@ X.Y.Z
 ### Added
 - TODO: 未来版本的功能
 
-### Changed
-- TODO: 未来版本的变更
-
-### Fixed
-- TODO: 未来版本的修复
+[Unreleased]: https://github.com/XinDi-Technology/rspress-theme-aim/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/XinDi-Technology/rspress-theme-aim/releases/tag/v1.1.0
+[1.0.0]: https://github.com/XinDi-Technology/rspress-theme-aim/releases/tag/v1.0.0
 ```
 
 ### 3. 准备发布说明
@@ -80,13 +93,28 @@ X.Y.Z
 
 ### 2. 创建 GitHub Release
 
+**方法 A：使用自动发布工作流**（推荐）
+
+1. 创建版本标签：
+   ```bash
+   # 替换为你的版本号
+   git tag v1.0.0
+   git push origin v1.0.0
+   ```
+2. 等待自动发布完成：
+   - 打开 **Actions** 页面
+   - 查看 **Automatic Release** 工作流
+   - 等待完成（显示 ✅）
+
+**方法 B：手动创建 Release**
+
 1. 打开项目的 GitHub 页面
 2. 进入 **Releases** 页面
 3. 点击 **Draft a new release**
 4. 填写：
-   - **Tag version**：输入版本号，如 `v1.1.0`
+   - **Tag version**：输入版本号，如 `v1.0.0`
    - **Target**：选择 `main` 分支
-   - **Release title**：输入版本号，如 `v1.1.0`
+   - **Release title**：输入版本号，如 `v1.0.0`
    - **Description**：粘贴准备好的发布说明
 5. 点击 **Publish release**
 
