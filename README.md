@@ -166,6 +166,20 @@ CSS 变量（品牌色、首页背景、代码块等）：
 然后提交代码，让 GitHub Actions 重新构建即可。
 如遇大版本不兼容变更，请参考官方升级指南调整 rspress.config.ts 等配置。
 
+### 🆙 升级模板主题功能
+
+本模板会持续更新新的主题功能（版权信息、备案信息、编辑链接等）。
+
+**查看升级指南**：[docs/guide/upgrade.md](./docs/guide/upgrade.md)
+
+**快速升级步骤**：
+1. 查看 [Releases](https://github.com/XinDi-Technology/rspress-theme-aim/releases) 了解新版本功能
+2. 复制 `theme/` 目录到你的仓库（核心文件）
+3. （可选）复制 `docs/guide/*.md` 功能文档
+4. 提交并推送，等待自动部署
+
+> 💡 **提示**：升级前请备份你的自定义修改，特别是 `theme/` 目录下的文件。
+
 ### 📄 License
 
 本项目使用 MIT License。
