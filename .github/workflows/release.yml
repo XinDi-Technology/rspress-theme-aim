@@ -48,7 +48,8 @@ jobs:
           VERSION=${{ steps.extract_version.outputs.version }}
           # Remove v prefix from version
           VERSION_WITHOUT_V=${VERSION#v}
-          NOTES=$(awk '/^## \['"$VERSION_WITHOUT_V"'\]/ {flag=1; next} /^## \[/ {flag=0} flag' CHANGELOG.md)
+          # Extract content from version header until next version header or EOF
+          NOTES=$(awk '/^## \['"$VERSION_WITHOUT_V"'\]/ {flag=1; next} /^## \[/ {flag=0} flag; flag' CHANGELOG.md)
           if [ -z "$NOTES" ]; then
             NOTES="Automated release for $VERSION"
           fi
