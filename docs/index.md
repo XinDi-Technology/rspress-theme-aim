@@ -7,7 +7,7 @@ hero:
   tagline: 只用浏览器就能搭建和维护的现代文档站
   actions:
     - theme: brand
-      text: Quick Start
+      text: 指南
       link: /guide/
     - theme: alt
       text: GitHub
