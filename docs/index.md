@@ -25,10 +25,9 @@ features:
   - title: 可扩展
     details: 后续可按需接入自定义主题、CSS 变量和插件生态。
     icon: 🌍
+    span: 6
   - title: 通过中国合规
     details: 已经集成中国的ICP备案、公安联网备案显示。
     icon: 🌈
-  - title: 适用场景广泛
-    details: 个人/团队的技术文档、开源项目的使用手册、产品说明书与 API 文档或课程/培训资料站点。
-    icon: 🔥
+    span: 6
 ---
