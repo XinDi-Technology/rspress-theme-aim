@@ -3,8 +3,8 @@ pageType: home
 
 hero:
   name: 人工智能制造 · Rspress Theme AIm
-  text: 零本地环境 · GitHub Pages 一键部署的 Rspress 文档站模板
-  tagline: 只用浏览器就能搭建和维护的现代文档站
+  text: AI创建的简单 Rspress 模板
+  tagline: 只用浏览器就能搭建和维护的 Rspress 模板
   actions:
     - theme: brand
       text: 指南
@@ -26,8 +26,8 @@ features:
     details: 后续可按需接入自定义主题、CSS 变量和插件生态。
     icon: 🌍
     span: 6
-  - title: 通过中国合规
-    details: 已经集成中国的ICP备案、公安联网备案显示。
+  - title: 通过中国合规要求
+    details: 已经集成符合中国合规要求的ICP备案显示、公安联网备案显示。
     icon: 🌈
     span: 6
 ---
