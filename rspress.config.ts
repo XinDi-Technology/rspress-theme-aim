@@ -1,10 +1,16 @@
 import * as path from 'node:path';
 import { defineConfig } from '@rspress/core';
+import { pluginSitemap } from '@rspress/plugin-sitemap';
 
 export default defineConfig({
   base: '/rspress-theme-aim/',
   root: path.join(__dirname, 'docs'),
   title: '人工智能制造 · Rspress Theme AIm',
+  plugins: [
+    pluginSitemap({
+      siteUrl: 'https://xindi-technology.github.io/rspress-theme-aim/',
+    }),
+  ],
   themeConfig: {
     socialLinks: [
       {
