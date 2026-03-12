@@ -30,4 +30,5 @@ features:
     details: 已经集成符合中国合规要求的ICP备案显示、公安联网备案显示。
     icon: 🌈
     span: 6
+    link: /guide/icp
 ---
