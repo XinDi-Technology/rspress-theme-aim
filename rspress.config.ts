@@ -23,6 +23,35 @@ export default defineConfig({
             content: 'YOUR_BING_VERIFICATION_CODE',
           },
         },
+        // SEO 优化标签
+        {
+          tag: 'meta',
+          attrs: {
+            name: 'description',
+            content: '零本地环境 · GitHub Pages 一键部署的 Rspress 文档站模板，支持版权信息、ICP备案、公安备案等功能',
+          },
+        },
+        {
+          tag: 'meta',
+          attrs: {
+            name: 'keywords',
+            content: 'Rspress, 文档站, GitHub Pages, ICP备案, 公安备案, 静态站点, 零本地环境',
+          },
+        },
+        {
+          tag: 'meta',
+          attrs: {
+            name: 'author',
+            content: 'XinDi Technology',
+          },
+        },
+        {
+          tag: 'meta',
+          attrs: {
+            name: 'robots',
+            content: 'index, follow',
+          },
+        },
       ],
     },
   },
