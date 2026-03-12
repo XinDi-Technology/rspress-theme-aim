@@ -11,6 +11,21 @@ export default defineConfig({
       siteUrl: 'https://xindi-technology.github.io/rspress-theme-aim/',
     }),
   ],
+  builderConfig: {
+    html: {
+      tags: [
+        // Bing Webmasters 验证标签
+        // 请将 YOUR_BING_VERIFICATION_CODE 替换为 Bing 提供的验证码
+        {
+          tag: 'meta',
+          attrs: {
+            name: 'msvalidate.01',
+            content: 'YOUR_BING_VERIFICATION_CODE',
+          },
+        },
+      ],
+    },
+  },
   themeConfig: {
     socialLinks: [
       {
