@@ -11,7 +11,7 @@ hero:
       link: /guide/
     - theme: alt
       text: GitHub
-      link: https://xindi-technology.github.io/rspress-theme-aim
+      link: https://github.com/XinDi-Technology/rspress-theme-aim
 features:
   - title: 零本地环境
     details: 完全通过 GitHub 网页 + GitHub Actions 完成搭建与部署。
