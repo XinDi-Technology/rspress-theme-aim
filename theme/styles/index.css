@@ -51,6 +51,15 @@
   text-decoration: underline;
 }
 
+.rspress-copyright-divider {
+  color: var(--rp-c-text-3);
+  margin: 0 4px;
+}
+
+.rspress-copyright-powered-by {
+  color: var(--rp-c-text-2);
+}
+
 /* 暗色模式适配 */
 .dark .rspress-copyright-footer {
   border-top-color: var(--rp-c-divider-dark);

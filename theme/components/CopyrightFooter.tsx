@@ -2,6 +2,11 @@ import { usePageData } from '@rspress/core/runtime';
 import { withBase } from '@rspress/core/runtime';
 import type { DefaultThemeConfig } from '@rspress/core';
 
+interface PoweredByLink {
+  name: string;
+  url: string;
+}
+
 interface ThemeConfig extends DefaultThemeConfig {
   companyName?: string;
   companyUrl?: string;
@@ -9,6 +14,7 @@ interface ThemeConfig extends DefaultThemeConfig {
   endYear?: number;
   icpNumber?: string;
   gonganNumber?: string;
+  poweredBy?: PoweredByLink[];
 }
 
 export function CopyrightFooter() {
@@ -31,6 +37,12 @@ export function CopyrightFooter() {
 
   // 公安备案号
   const gonganNumber = themeConfig?.gonganNumber;
+  
+  // Powered by 配置
+  const poweredBy = themeConfig?.poweredBy || [
+    { name: 'Rspress', url: 'https://rspress.rs/' },
+    { name: 'AIm', url: 'https://xindi-technology.github.io/rspress-theme-aim' }
+  ];
   
   // 提取公安备案号中的数字部分用于查询链接
   const extractGonganCode = (number: string): string => {
@@ -59,6 +71,27 @@ export function CopyrightFooter() {
           </a>
         ) : (
           <span>{companyName}</span>
+        )}
+        {poweredBy && poweredBy.length > 0 && (
+          <>
+            <span className="rspress-copyright-divider"> · </span>
+            <span className="rspress-copyright-powered-by">
+              Powered by{' '}
+              {poweredBy.map((item, index) => (
+                <span key={index}>
+                  <a 
+                    href={item.url}
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="rspress-copyright-link"
+                  >
+                    {item.name}
+                  </a>
+                  {index < poweredBy.length - 1 && ' & '}
+                </span>
+              ))}
+            </span>
+          </>
         )}
       </div>
       {icpNumber && (
