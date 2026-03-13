@@ -77,15 +77,46 @@
 
 ### 4.2 图片
 
-<img src="/rspress-icon.png" alt="图片描述" width="50" height="50">
+**不同写法的表现：**
 
-<img src="/rspress-icon.png" alt="带标题的图片" width="50" height="50" title="图片标题">
+1. **Markdown 语法** - 无法直接设置图片尺寸，使用默认大小：
+   ```markdown
+   ![图片描述](/rspress-icon.png)
+   ```
+   效果：![图片描述](/rspress-icon.png)
+
+2. **HTML 标签** - 可以设置图片尺寸，更加灵活：
+   ```html
+   <img src="/rspress-icon.png" alt="图片描述" width="100" height="100">
+   ```
+   效果：<img src="/rspress-icon.png" alt="图片描述" width="100" height="100">
+
+3. **带标题的图片** - 鼠标悬停时显示标题：
+   ```html
+   <img src="/rspress-icon.png" alt="带标题的图片" width="100" height="100" title="图片标题">
+   ```
+   效果：<img src="/rspress-icon.png" alt="带标题的图片" width="100" height="100" title="图片标题">
 
 ### 4.3 图片链接
 
-<a href="https://example.com">
-  <img src="/rspress-icon.png" alt="图片链接" width="50" height="50">
-</a>
+**不同写法的表现：**
+
+1. **Markdown 语法** - 无法直接设置图片尺寸：
+   ```markdown
+   [![图片链接](/rspress-icon.png)](https://example.com)
+   ```
+   效果：[![图片链接](/rspress-icon.png)](https://example.com)
+
+2. **HTML 标签** - 可以设置图片尺寸：
+   ```html
+   <a href="https://example.com">
+     <img src="/rspress-icon.png" alt="图片链接" width="100" height="100">
+   </a>
+   ```
+   效果：
+   <a href="https://example.com">
+     <img src="/rspress-icon.png" alt="图片链接" width="100" height="100">
+   </a>
 
 ---
 
