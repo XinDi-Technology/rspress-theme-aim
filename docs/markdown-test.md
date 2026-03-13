@@ -77,13 +77,15 @@
 
 ### 4.2 图片
 
-![图片描述](/rspress-icon.png)
+<img src="/rspress-icon.png" alt="图片描述" width="50" height="50">
 
-![带标题的图片](/rspress-icon.png "图片标题")
+<img src="/rspress-icon.png" alt="带标题的图片" width="50" height="50" title="图片标题">
 
 ### 4.3 图片链接
 
-[![图片链接](/rspress-icon.png)](https://example.com)
+<a href="https://example.com">
+  <img src="/rspress-icon.png" alt="图片链接" width="50" height="50">
+</a>
 
 ---
 
