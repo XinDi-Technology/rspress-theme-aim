@@ -24,15 +24,11 @@
 ***粗斜体文本***
 ~~删除线文本~~
 
-### 2.2 下划线
-
-<u>下划线文本</u>
-
-### 2.3 行内代码
+### 2.2 行内代码
 
 使用 `行内代码` 标记代码片段。
 
-### 2.4 转义字符
+### 2.3 转义字符
 
 \*不是斜体\*
 \[不是链接\]
@@ -77,46 +73,13 @@
 
 ### 4.2 图片
 
-**不同写法的表现：**
+![图片描述](/rspress-icon.png)
 
-1. **Markdown 语法** - 无法直接设置图片尺寸，使用默认大小：
-   ```markdown
-   ![图片描述](/rspress-icon.png)
-   ```
-   效果：![图片描述](/rspress-icon.png)
-
-2. **HTML 标签** - 可以设置图片尺寸，更加灵活：
-   ```html
-   <img src="/rspress-icon.png" alt="图片描述" width="100" height="100">
-   ```
-   效果：<img src="/rspress-icon.png" alt="图片描述" width="100" height="100">
-
-3. **带标题的图片** - 鼠标悬停时显示标题：
-   ```html
-   <img src="/rspress-icon.png" alt="带标题的图片" width="100" height="100" title="图片标题">
-   ```
-   效果：<img src="/rspress-icon.png" alt="带标题的图片" width="100" height="100" title="图片标题">
+![带标题的图片](/rspress-icon.png "图片标题")
 
 ### 4.3 图片链接
 
-**不同写法的表现：**
-
-1. **Markdown 语法** - 无法直接设置图片尺寸：
-   ```markdown
-   [![图片链接](/rspress-icon.png)](https://example.com)
-   ```
-   效果：[![图片链接](/rspress-icon.png)](https://example.com)
-
-2. **HTML 标签** - 可以设置图片尺寸：
-   ```html
-   <a href="https://example.com">
-     <img src="/rspress-icon.png" alt="图片链接" width="100" height="100">
-   </a>
-   ```
-   效果：
-   <a href="https://example.com">
-     <img src="/rspress-icon.png" alt="图片链接" width="100" height="100">
-   </a>
+[![图片链接](/rspress-icon.png)](https://example.com)
 
 ---
 
@@ -251,13 +214,7 @@ ___
 
 ---
 
-## 9. 内联样式
-
-<span style="color: red;">红色文本</span>
-
----
-
-## 10. 脚注
+## 9. 脚注
 
 这是一段包含脚注的文本[^1]。
 
@@ -268,36 +225,36 @@ ___
 
 ---
 
-## 11. GitHub Markdown Alerts
+## 10. GitHub Markdown Alerts
 
-### 11.1 Note
+### 10.1 Note
 
 > [!NOTE]
 > 有用的信息，用户应该知道，但不是必须的。
 
-### 11.2 Tip
+### 10.2 Tip
 
 > [!TIP]
 > 有帮助的建议，用于优化或简化操作。
 
-### 11.3 Important
+### 10.3 Important
 
 > [!IMPORTANT]
 > 关键信息，用户必须注意。
 
-### 11.4 Warning
+### 10.4 Warning
 
 > [!WARNING]
 > 警告信息，提示潜在问题或风险。
 
-### 11.5 Caution
+### 10.5 Caution
 
 > [!CAUTION]
 > 危险操作，可能导致数据丢失或安全风险。
 
 ---
 
-## 12. Emoji
+## 11. Emoji
 
 😀 😃 😄 😁 😆 😅 🤣 😂
 
@@ -307,7 +264,7 @@ ___
 
 ---
 
-## 13. 数学公式（如果支持）
+## 12. 数学公式（如果支持）
 
 行内公式：$E = mc^2$
 
@@ -319,7 +276,7 @@ $$
 
 ---
 
-## 14. 特殊字符
+## 13. 特殊字符
 
 &copy; &reg; &trade; &euro; &pound; &yen;
 
@@ -327,7 +284,7 @@ $$
 
 ---
 
-## 15. 缩进和空格
+## 14. 缩进和空格
 
     缩进 4 个空格
     会显示为代码块
@@ -336,15 +293,15 @@ $$
 
 ---
 
-## 16. 性能测试
+## 15. 性能测试
 
-### 16.1 大量文本测试
+### 15.1 大量文本测试
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-### 16.2 大量代码测试
+### 15.2 大量代码测试
 
 ```javascript
 // 大量代码测试
@@ -393,13 +350,12 @@ async function fetchData() {
 6. ✅ 代码块（支持语法高亮）
 7. ✅ 表格（支持对齐）
 8. ✅ 分隔线
-9. ✅ 内联样式
-10. ✅ 脚注
-11. ✅ GitHub Markdown Alerts
-12. ✅ Emoji
-13. ✅ 数学公式（如果支持）
-14. ✅ 特殊字符
-15. ✅ 缩进和空格
-16. ✅ 性能测试
+9. ✅ 脚注
+10. ✅ GitHub Markdown Alerts
+11. ✅ Emoji
+12. ✅ 数学公式（如果支持）
+13. ✅ 特殊字符
+14. ✅ 缩进和空格
+15. ✅ 性能测试
 
 如需添加更多测试用例，请编辑本文档。
