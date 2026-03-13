@@ -77,13 +77,13 @@
 
 ### 4.2 图片
 
-![图片描述](https://via.placeholder.com/150)
+![图片描述](/rspress-icon.png)
 
-![带标题的图片](https://via.placeholder.com/150 "图片标题")
+![带标题的图片](/rspress-icon.png "图片标题")
 
 ### 4.3 图片链接
 
-[![图片链接](https://via.placeholder.com/100)](https://example.com)
+[![图片链接](/rspress-icon.png)](https://example.com)
 
 ---
 
@@ -104,7 +104,7 @@
 
 ### 5.3 引用中包含其他元素
 
-> 引用中可以包含 **粗体**、`代码` 和 [链接](https://example.com)。
+> 引用中可以包含 **粗体**、`代码` 和 [链接](https://xindi-technology.github.io/rspress-theme-aim/)。
 
 ---
 
@@ -194,27 +194,33 @@ function calculateSum(a, b) {
 
 ## 8. 分隔线
 
+分隔线用于在文档中创建视觉分隔，可以使用以下三种不同的字符组合：
+
+### 8.1 短横线
+
+使用三个或更多短横线：
+
 ---
+
+### 8.2 星号
+
+使用三个或更多星号：
 
 ***
 
+### 8.3 下划线
+
+使用三个或更多下划线：
+
 ___
 
-### 不同样式
+**说明**：以上三种写法在渲染后效果相同，都是一条横线，但源码写法不同。
 
 ---
 
-## 9. HTML 元素
-
-### 9.1 内联样式
+## 9. 内联样式
 
 <span style="color: red;">红色文本</span>
-
-### 9.2 自定义类名
-
-<div class="custom-box">
-  这是一个自定义样式的盒子
-</div>
 
 ---
 
@@ -229,62 +235,36 @@ ___
 
 ---
 
-## 11. MDX 特性
+## 11. GitHub Markdown Alerts
 
-### 11.1 导入组件
+### 11.1 Note
 
-```tsx
-import { Button } from './components/Button';
-```
+> [!NOTE]
+> 有用的信息，用户应该知道，但不是必须的。
 
-### 11.2 使用 React 组件
+### 11.2 Tip
 
-<div style={{ padding: '16px', background: '#f0f0f0', borderRadius: '8px' }}>
-  <h3>这是一个 React 组件</h3>
-  <p>可以在 Markdown 中使用 JSX 语法</p>
-</div>
+> [!TIP]
+> 有帮助的建议，用于优化或简化操作。
 
-### 11.3 内联表达式
+### 11.3 Important
 
-2 + 2 = {2 + 2}
+> [!IMPORTANT]
+> 关键信息，用户必须注意。
 
-当前年份：{new Date().getFullYear()}
+### 11.4 Warning
 
-### 11.4 条件渲染
+> [!WARNING]
+> 警告信息，提示潜在问题或风险。
 
-{true ? <span>显示这个</span> : <span>不显示这个</span>}
+### 11.5 Caution
 
----
-
-## 12. 警告框
-
-### 12.1 提示
-
-> 💡 **提示**
-> 
-> 这是一条提示信息。
-
-### 12.2 警告
-
-> ⚠️ **警告**
-> 
-> 这是一条警告信息。
-
-### 12.3 错误
-
-> ❌ **错误**
-> 
-> 这是一条错误信息。
-
-### 12.4 注意
-
-> ℹ️ **注意**
-> 
-> 这是一条注意事项。
+> [!CAUTION]
+> 危险操作，可能导致数据丢失或安全风险。
 
 ---
 
-## 13. 代码组
+## 12. 代码组
 
 ```ts group="基础配置"
 const config = {
@@ -302,7 +282,7 @@ const theme = {
 
 ---
 
-## 14. 标签页
+## 13. 标签页
 
 <Tabs>
   <TabItem label="JavaScript">
@@ -324,7 +304,7 @@ const theme = {
 
 ---
 
-## 15. 折叠内容
+## 14. 折叠内容
 
 <details>
   <summary>点击展开</summary>
@@ -340,7 +320,7 @@ const theme = {
 
 ---
 
-## 16. Emoji
+## 15. Emoji
 
 😀 😃 😄 😁 😆 😅 🤣 😂
 
@@ -350,7 +330,7 @@ const theme = {
 
 ---
 
-## 17. 数学公式（如果支持）
+## 16. 数学公式（如果支持）
 
 行内公式：$E = mc^2$
 
@@ -362,65 +342,7 @@ $$
 
 ---
 
-## 18. 自定义组件示例
-
-### 18.1 提示框
-
-<div style={{
-  padding: '12px 16px',
-  background: '#e3f2fd',
-  borderLeft: '4px solid #2196f3',
-  borderRadius: '4px',
-  margin: '16px 0'
-}}>
-  <strong>提示：</strong>这是一个自定义样式的提示框
-</div>
-
-### 18.2 成功提示
-
-<div style={{
-  padding: '12px 16px',
-  background: '#e8f5e9',
-  borderLeft: '4px solid #4caf50',
-  borderRadius: '4px',
-  margin: '16px 0'
-}}>
-  <strong>成功：</strong>操作成功完成
-</div>
-
-### 18.3 警告提示
-
-<div style={{
-  padding: '12px 16px',
-  background: '#fff3e0',
-  borderLeft: '4px solid #ff9800',
-  borderRadius: '4px',
-  margin: '16px 0'
-}}>
-  <strong>警告：</strong>请注意检查配置
-</div>
-
----
-
-## 19. 快捷键
-
-<kbd>Ctrl</kbd> + <kbd>C</kbd> 复制
-
-<kbd>Ctrl</kbd> + <kbd>V</kbd> 粘贴
-
-<kbd>Ctrl</kbd> + <kbd>S</kbd> 保存
-
----
-
-## 20. 时间戳
-
-发布时间：2026-03-13
-
-最后更新：{new Date().toLocaleDateString('zh-CN')}
-
----
-
-## 21. 特殊字符
+## 17. 特殊字符
 
 &copy; &reg; &trade; &euro; &pound; &yen;
 
@@ -428,21 +350,7 @@ $$
 
 ---
 
-## 22. 定义列表
-
-术语 1
-:   定义 1
-
-术语 2
-:   定义 2
-:   定义 2 的第二行
-
-术语 3
-:   定义 3
-
----
-
-## 23. 缩进和空格
+## 18. 缩进和空格
 
     缩进 4 个空格
     会显示为代码块
@@ -451,30 +359,15 @@ $$
 
 ---
 
-## 24. 混合示例
+## 19. 性能测试
 
-这是一个包含多种元素的段落：
-
-- **粗体**和*斜体*混合使用
-- 包含 `行内代码`
-- 以及[链接](https://rspress.rs/)
-- 和![图片](https://via.placeholder.com/20)
-
-> 引用块中也可以包含列表：
-> - 项目一
-> - 项目二
-
----
-
-## 25. 性能测试
-
-### 25.1 大量文本测试
+### 19.1 大量文本测试
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-### 25.2 大量代码测试
+### 19.2 大量代码测试
 
 ```javascript
 // 大量代码测试
@@ -522,15 +415,17 @@ async function fetchData() {
 5. ✅ 引用（支持嵌套）
 6. ✅ 代码块（支持语法高亮）
 7. ✅ 表格（支持对齐）
-8. ✅ HTML 元素
-9. ✅ 脚注
-10. ✅ MDX 特性（JSX、表达式）
-11. ✅ 警告框
+8. ✅ 分隔线
+9. ✅ 内联样式
+10. ✅ 脚注
+11. ✅ GitHub Markdown Alerts
 12. ✅ 代码组
 13. ✅ 标签页
 14. ✅ 折叠内容
 15. ✅ Emoji
-16. ✅ 快捷键
-17. ✅ 自定义组件
+16. ✅ 数学公式（如果支持）
+17. ✅ 特殊字符
+18. ✅ 缩进和空格
+19. ✅ 性能测试
 
 如需添加更多测试用例，请编辑本文档。

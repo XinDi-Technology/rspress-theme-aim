@@ -3,5 +3,10 @@
     "text": "指南",
     "link": "/guide/",
     "activeMatch": "/guide/"
+  },
+  {
+    "text": "语法测试",
+    "link": "/markdown-test",
+    "activeMatch": "/markdown-test"
   }
 ]
