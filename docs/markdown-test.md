@@ -1,6 +1,6 @@
-# Markdown/MDX 语法测试
+# Markdown 语法测试
 
-本文档用于测试和展示本项目支持的 Markdown 和 MDX 语法。
+本文档用于测试和展示本项目支持的 Markdown 语法。
 
 ## 1. 标题
 
@@ -297,63 +297,7 @@ ___
 
 ---
 
-## 12. 代码组
-
-```ts group="基础配置"
-const config = {
-  name: 'Rspress',
-  version: '2.0.0'
-};
-```
-
-```ts group="基础配置"
-const theme = {
-  darkMode: true,
-  fontSize: 16
-};
-```
-
----
-
-## 13. 标签页
-
-<Tabs>
-  <TabItem label="JavaScript">
-    ```javascript
-    console.log('JavaScript');
-    ```
-  </TabItem>
-  <TabItem label="TypeScript">
-    ```typescript
-    console.log('TypeScript');
-    ```
-  </TabItem>
-  <TabItem label="Python">
-    ```python
-    print('Python')
-    ```
-  </TabItem>
-</Tabs>
-
----
-
-## 14. 折叠内容
-
-<details>
-  <summary>点击展开</summary>
-  
-  这是折叠的内容，默认隐藏，点击后显示。
-  
-  可以包含：
-  - 列表项
-  - **格式化文本**
-  - `代码片段`
-  
-</details>
-
----
-
-## 15. Emoji
+## 12. Emoji
 
 😀 😃 😄 😁 😆 😅 🤣 😂
 
@@ -363,7 +307,7 @@ const theme = {
 
 ---
 
-## 16. 数学公式（如果支持）
+## 13. 数学公式（如果支持）
 
 行内公式：$E = mc^2$
 
@@ -375,7 +319,7 @@ $$
 
 ---
 
-## 17. 特殊字符
+## 14. 特殊字符
 
 &copy; &reg; &trade; &euro; &pound; &yen;
 
@@ -383,7 +327,7 @@ $$
 
 ---
 
-## 18. 缩进和空格
+## 15. 缩进和空格
 
     缩进 4 个空格
     会显示为代码块
@@ -392,15 +336,15 @@ $$
 
 ---
 
-## 19. 性能测试
+## 16. 性能测试
 
-### 19.1 大量文本测试
+### 16.1 大量文本测试
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-### 19.2 大量代码测试
+### 16.2 大量代码测试
 
 ```javascript
 // 大量代码测试
@@ -452,13 +396,10 @@ async function fetchData() {
 9. ✅ 内联样式
 10. ✅ 脚注
 11. ✅ GitHub Markdown Alerts
-12. ✅ 代码组
-13. ✅ 标签页
-14. ✅ 折叠内容
-15. ✅ Emoji
-16. ✅ 数学公式（如果支持）
-17. ✅ 特殊字符
-18. ✅ 缩进和空格
-19. ✅ 性能测试
+12. ✅ Emoji
+13. ✅ 数学公式（如果支持）
+14. ✅ 特殊字符
+15. ✅ 缩进和空格
+16. ✅ 性能测试
 
 如需添加更多测试用例，请编辑本文档。
