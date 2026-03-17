@@ -19,9 +19,14 @@ export function BlogList() {
   // 动态获取博客文章数据
   const blogPosts: BlogPost[] = [];
   
-  if (siteData.pages) {
+  if (siteData.pages && Array.isArray(siteData.pages)) {
     // 过滤出博客文章页面
     siteData.pages.forEach((page) => {
+      // 安全检查：确保 page 和 page.route 存在
+      if (!page || !page.route) {
+        return;
+      }
+      
       // 检查是否是博客文章（路径包含 /blog/ 且不是 index 页面）
       const isBlogPost = page.route.includes('/blog/') && !page.route.endsWith('/blog/');
       
