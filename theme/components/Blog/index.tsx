@@ -70,8 +70,14 @@ export const useBlogPages = (): BlogItem[] => {
 
         // 确保文章有必要的元数据
         if (frontMatter.title) {
-          // 移除 routePath 开头的斜杠，然后拼接
-          const cleanRoute = page.routePath.replace(/^\//, '');
+          // 移除 routePath 开头的斜杠
+          let cleanRoute = page.routePath.replace(/^\//, '');
+
+          // 如果 routePath 不包含语言前缀，则添加当前语言前缀
+          if (!cleanRoute.startsWith('zh/') && !cleanRoute.startsWith('en/')) {
+            cleanRoute = `${currentLang}/${cleanRoute}`;
+          }
+
           const link = `${basePath}/${cleanRoute}`;
           if (typeof window !== 'undefined') {
             console.log('Generated link:', link, 'from routePath:', page.routePath);
