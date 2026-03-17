@@ -18,8 +18,8 @@ export const useBlogPages = (): BlogItem[] => {
   // 获取当前语言
   const currentLang = siteData.lang || 'zh';
 
-  // 获取 base 路径
-  const basePath = siteData.base || '/';
+  // 获取 base 路径并移除末尾斜杠
+  const basePath = (siteData.base || '/').replace(/\/$/, '');
 
   // 临时调试
   if (typeof window !== 'undefined') {
@@ -70,7 +70,9 @@ export const useBlogPages = (): BlogItem[] => {
 
         // 确保文章有必要的元数据
         if (frontMatter.title) {
-          const link = basePath + page.routePath;
+          // 移除 routePath 开头的斜杠，然后拼接
+          const cleanRoute = page.routePath.replace(/^\//, '');
+          const link = `${basePath}/${cleanRoute}`;
           if (typeof window !== 'undefined') {
             console.log('Generated link:', link, 'from routePath:', page.routePath);
           }
