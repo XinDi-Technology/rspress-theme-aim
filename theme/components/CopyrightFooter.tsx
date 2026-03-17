@@ -26,25 +26,28 @@ export function CopyrightFooter() {
   const startYear = themeConfig?.startYear ?? 2020;
   const endYear = themeConfig?.endYear ?? currentYear;
   
-  // 获取当前语言
-  const currentLang = siteData.lang || 'zh';
-  
-  // 公司名称：优先使用配置，其次使用当前语言的 title
+  // 公司名称：优先使用配置，其次使用站点信息
   let companyName = themeConfig?.companyName;
   
   if (!companyName) {
-    // 尝试从 locales 中获取当前语言的 title
-    const currentLocale = siteData.locales?.find((loc: any) => loc.lang === currentLang);
-    companyName = currentLocale?.title;
-    
-    // 如果没有找到当前语言的 title，使用全局 title
-    if (!companyName) {
+    // 尝试从站点信息中获取标题
+    if (typeof siteData.title === 'string') {
       companyName = siteData.title;
+    } else if (siteData.locales && Array.isArray(siteData.locales)) {
+      // 尝试从当前语言的配置中获取标题
+      const currentLang = siteData.lang || 'zh';
+      const currentLocale = siteData.locales.find((loc: any) => loc.lang === currentLang);
+      if (currentLocale && currentLocale.title) {
+        companyName = currentLocale.title;
+      } else if (siteData.locales[0] && siteData.locales[0].title) {
+        //  fallback 到第一个语言的标题
+        companyName = siteData.locales[0].title;
+      }
     }
     
-    // 如果还是没有，使用默认值
+    // 最后的 fallback
     if (!companyName) {
-      companyName = currentLang === 'en' ? 'AI Manufacturing · Rspress Theme AIm' : '人工智能制造 · Rspress Theme AIm';
+      companyName = 'Rspress Theme AIm';
     }
   }
   
