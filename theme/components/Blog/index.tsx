@@ -18,6 +18,15 @@ export const useBlogPages = (): BlogItem[] => {
   // 获取当前语言
   const currentLang = siteData.lang || 'zh';
 
+  // 临时调试：显示所有页面路由
+  if (typeof window !== 'undefined') {
+    console.log('=== Blog Debug Info ===');
+    console.log('Current language:', currentLang);
+    console.log('Total pages:', siteData.pages?.length);
+    console.log('All page routes:', siteData.pages?.map(p => p.route));
+    console.log('=====================');
+  }
+
   // 动态获取博客文章数据
   const blogPosts: BlogItem[] = [];
 
@@ -36,6 +45,11 @@ export const useBlogPages = (): BlogItem[] => {
         continue;
       }
 
+      // 临时调试
+      if (typeof window !== 'undefined') {
+        console.log('Found blog page:', page.route, 'frontmatter:', page.frontmatter);
+      }
+
       // 排除博客首页（index.mdx）
       const isBlogIndex =
         page.route === '/blog' ||
@@ -44,6 +58,9 @@ export const useBlogPages = (): BlogItem[] => {
         page.route.endsWith('/blog/index');
 
       if (isBlogIndex) {
+        if (typeof window !== 'undefined') {
+          console.log('Skipping blog index:', page.route);
+        }
         continue;
       }
 
