@@ -1,4 +1,12 @@
 [
+  {
+    "type": "section-header",
+    "label": "Overview"
+  },
   "index",
+  {
+    "type": "section-header",
+    "label": "Blog"
+  },
   "welcome"
 ]

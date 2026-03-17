@@ -11,6 +11,10 @@
         "link": "/guide/home-features"
       },
       {
+        "text": "Blog Feature",
+        "link": "/guide/blog"
+      },
+      {
         "text": "Copyright",
         "link": "/guide/copyright"
       },

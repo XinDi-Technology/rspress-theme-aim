@@ -29,6 +29,13 @@
     - 基于 `theme/index.tsx` 扩展默认主题：[自定义主题](https://rspress.rs/zh/guide/basic/custom-theme)
     - 接入 Rspress 插件生态：[插件机制介绍](https://rspress.rs/zh/plugin/system/introduction)
 
+- **博客功能**
+  - 基于 Rspress 约定式路由
+  - 支持 Markdown/MDX 格式
+  - Frontmatter 元数据配置
+  - 多语言支持
+  - 参考使用文档：[博客功能指南](docs/guide/blog.md)
+
 ---
 
 ## 🚀 快速开始（作为模板使用）
