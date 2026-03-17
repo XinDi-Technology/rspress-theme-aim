@@ -13,10 +13,17 @@ export interface BlogProps {
 }
 
 export const useBlogPages = (): BlogItem[] => {
-  const { siteData } = usePageData();
+  const { siteData, page } = usePageData();
 
-  // 获取当前语言
-  const currentLang = siteData.lang || 'zh';
+  // 从页面路径中获取当前语言
+  let currentLang = 'zh';
+  if (page && page.routePath) {
+    if (page.routePath.startsWith('/en/')) {
+      currentLang = 'en';
+    } else if (page.routePath.startsWith('/zh/')) {
+      currentLang = 'zh';
+    }
+  }
 
   // 获取 base 路径并移除末尾斜杠
   const basePath = (siteData.base || '/').replace(/\/$/, '');
