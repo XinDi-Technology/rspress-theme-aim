@@ -13,43 +13,75 @@ interface BlogPost {
 export function BlogList() {
   const { siteData } = usePageData();
   
-  // 这里可以通过 siteData 获取博客文章数据
-  // 实际项目中可能需要通过插件或其他方式获取
+  // 获取当前语言
+  const currentLang = siteData.lang || 'zh';
   
-  // 示例数据
-  const blogPosts: BlogPost[] = [
-    {
-      title: '欢迎使用 Rspress 主题 AIm',
-      date: '2026-03-17',
-      author: 'AIm 团队',
-      categories: ['公告', '教程'],
-      tags: ['Rspress', '主题', '博客'],
-      link: '/blog/welcome',
-      summary: 'Rspress Theme AIm 是一个基于 Rspress 的文档站主题，提供了丰富的功能和良好的用户体验。'
-    }
-  ];
+  // 动态获取博客文章数据
+  const blogPosts: BlogPost[] = [];
+  
+  if (siteData.pages) {
+    // 过滤出博客文章页面
+    siteData.pages.forEach((page) => {
+      // 检查是否是博客文章（路径包含 /blog/ 且不是 index 页面）
+      const isBlogPost = page.route.includes('/blog/') && !page.route.endsWith('/blog/');
+      
+      if (isBlogPost) {
+        // 确保当前语言的文章
+        const isCurrentLang = page.route.startsWith(`/${currentLang}/blog/`) || 
+                             (currentLang === 'zh' && page.route.startsWith('/blog/'));
+        
+        if (isCurrentLang) {
+          const frontMatter = page.frontmatter || {};
+          
+          // 确保文章有必要的元数据
+          if (frontMatter.title) {
+            blogPosts.push({
+              title: frontMatter.title,
+              date: frontMatter.date || '',
+              author: frontMatter.author || '',
+              categories: frontMatter.categories || [],
+              tags: frontMatter.tags || [],
+              link: page.route,
+              summary: frontMatter.summary || ''
+            });
+          }
+        }
+      }
+    });
+    
+    // 按日期排序（最新的在前）
+    blogPosts.sort((a, b) => {
+      return new Date(b.date).getTime() - new Date(a.date).getTime();
+    });
+  }
 
   return (
     <div className="blog-list">
       <h2>最新文章</h2>
       <div className="blog-posts">
-        {blogPosts.map((post, index) => (
-          <div key={index} className="blog-post">
-            <h3>
-              <a href={post.link}>{post.title}</a>
-            </h3>
-            <div className="blog-post-meta">
-              <span className="blog-post-date">{post.date}</span>
-              <span className="blog-post-author">{post.author}</span>
+        {blogPosts.length > 0 ? (
+          blogPosts.map((post, index) => (
+            <div key={index} className="blog-post">
+              <h3>
+                <a href={post.link}>{post.title}</a>
+              </h3>
+              <div className="blog-post-meta">
+                <span className="blog-post-date">{post.date}</span>
+                <span className="blog-post-author">{post.author}</span>
+              </div>
+              <div className="blog-post-summary">{post.summary}</div>
+              <div className="blog-post-tags">
+                {post.tags.map((tag, tagIndex) => (
+                  <span key={tagIndex} className="blog-tag">{tag}</span>
+                ))}
+              </div>
             </div>
-            <div className="blog-post-summary">{post.summary}</div>
-            <div className="blog-post-tags">
-              {post.tags.map((tag, tagIndex) => (
-                <span key={tagIndex} className="blog-tag">{tag}</span>
-              ))}
-            </div>
+          ))
+        ) : (
+          <div className="no-posts">
+            <p>暂无博客文章</p>
           </div>
-        ))}
+        )}
       </div>
     </div>
   );
