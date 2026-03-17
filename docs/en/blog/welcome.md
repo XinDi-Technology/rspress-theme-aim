@@ -11,7 +11,9 @@ tags:
   - Blog
 ---
 
-# Welcome to Rspress Theme AIm
+import { BlogPostHeader } from '@theme/components/Blog';
+
+<BlogPostHeader />
 
 Rspress Theme AIm is a documentation theme based on Rspress, providing rich features and excellent user experience.
 

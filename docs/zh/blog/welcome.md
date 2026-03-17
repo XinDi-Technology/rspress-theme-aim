@@ -11,7 +11,9 @@ tags:
   - 博客
 ---
 
-# 欢迎使用 Rspress 主题 AIm
+import { BlogPostHeader } from '@theme/components/Blog';
+
+<BlogPostHeader />
 
 Rspress 主题 AIm 是一个基于 Rspress 的文档站主题，提供了丰富的功能和良好的用户体验。
 
