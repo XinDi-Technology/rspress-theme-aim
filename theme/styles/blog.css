@@ -72,8 +72,8 @@
 .blog-category {
   font-size: 0.8125rem;
   padding: 0.25rem 0.75rem;
-  background-color: var(--rp-c-brand-light);
-  color: var(--rp-c-brand-dark);
+  background-color: #e3f2fd;
+  color: #1565c0;
   border-radius: 4px;
   font-weight: 500;
 }
@@ -129,6 +129,11 @@
 .dark .blog-category {
   background-color: var(--rp-c-brand-dark);
   color: var(--rp-c-brand-light);
+}
+
+.dark .blog-category {
+  background-color: #1e3a5f;
+  color: #64b5f6;
 }
 
 .dark .blog-tag {
