@@ -62,7 +62,7 @@ description: Article summary
 | `author` | string | No | Author name |
 | `categories` | string[] | No | Article category list |
 | `tags` | string[] | No | Article tag list |
-| `description` | string | No | Article summary for SEO |
+| `description` | string | Yes | Article summary displayed in blog list |
 
 ### 3. Write Article Content
 

@@ -62,7 +62,7 @@ description: 文章摘要
 | `author` | string | 否 | 作者名称 |
 | `categories` | string[] | 否 | 文章分类列表 |
 | `tags` | string[] | 否 | 文章标签列表 |
-| `description` | string | 否 | 文章摘要，用于 SEO |
+| `description` | string | 是 | 文章摘要，在博客列表中显示 |
 
 ### 3. 编写文章内容
 
