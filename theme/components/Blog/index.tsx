@@ -1,5 +1,5 @@
 import { usePageData } from '@rspress/core/runtime';
-import '../styles/blog.css';
+import '../../styles/blog.css';
 
 export interface BlogItem {
   title?: string;
