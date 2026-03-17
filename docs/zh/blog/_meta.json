@@ -1,15 +1,4 @@
 [
-  {
-    "text": "博客首页",
-    "link": "/blog/"
-  },
-  {
-    "text": "文章列表",
-    "items": [
-      {
-        "text": "欢迎使用 Rspress 主题 AIm",
-        "link": "/blog/welcome"
-      }
-    ]
-  }
+  "index",
+  "welcome"
 ]
