@@ -27,13 +27,16 @@ export function BlogList() {
         return;
       }
       
-      // 检查是否是博客文章（路径包含 /blog/ 且不是 index 页面）
-      const isBlogPost = page.route.includes('/blog/') && !page.route.endsWith('/blog/');
+      // 检查是否是博客文章（路径包含 /blog/）
+      const isBlogPost = page.route.includes('/blog/');
       
-      if (isBlogPost) {
+      // 排除博客首页
+      const isBlogIndex = page.route.endsWith('/blog/') || page.route.endsWith('/blog/index');
+      
+      if (isBlogPost && !isBlogIndex) {
         // 确保当前语言的文章
         const isCurrentLang = page.route.startsWith(`/${currentLang}/blog/`) || 
-                             (currentLang === 'zh' && page.route.startsWith('/blog/'));
+                             (currentLang === 'zh' && !page.route.startsWith('/en/') && page.route.includes('/blog/'));
         
         if (isCurrentLang) {
           const frontMatter = page.frontmatter || {};
