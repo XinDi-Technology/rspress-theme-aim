@@ -18,62 +18,40 @@ export const useBlogPages = (): BlogItem[] => {
   // 获取当前语言
   const currentLang = siteData.lang || 'zh';
 
-  // 临时调试：显示所有页面路由
-  if (typeof window !== 'undefined') {
-    console.log('=== Blog Debug Info ===');
-    console.log('Current language:', currentLang);
-    console.log('Total pages:', siteData.pages?.length);
-    console.log('SiteData structure:', siteData);
-
-    if (siteData.pages && siteData.pages.length > 0) {
-      console.log('=== First page object structure ===');
-      console.log(JSON.stringify(siteData.pages[0], null, 2));
-      console.log('========================================');
-    }
-  }
-
   // 动态获取博客文章数据
   const blogPosts: BlogItem[] = [];
 
   if (siteData.pages && Array.isArray(siteData.pages)) {
     // 过滤出博客文章页面
     for (const page of siteData.pages) {
-      // 安全检查：确保 page 和 page.route 存在
-      if (!page || !page.route) {
+      // 安全检查：确保 page 和 page.routePath 存在
+      if (!page || !page.routePath) {
         continue;
       }
 
       // 检查路由中是否包含 blog
-      const hasBlogPath = page.route.includes('/blog');
+      const hasBlogPath = page.routePath.includes('/blog');
 
       if (!hasBlogPath) {
         continue;
       }
 
-      // 临时调试
-      if (typeof window !== 'undefined') {
-        console.log('Found blog page:', page.route, 'frontmatter:', page.frontmatter);
-      }
-
       // 排除博客首页（index.mdx）
       const isBlogIndex =
-        page.route === '/blog' ||
-        page.route === `/${currentLang}/blog` ||
-        page.route.endsWith('/blog/') ||
-        page.route.endsWith('/blog/index');
+        page.routePath === '/blog' ||
+        page.routePath === `/${currentLang}/blog` ||
+        page.routePath.endsWith('/blog/') ||
+        page.routePath === `/${currentLang}/blog/`;
 
       if (isBlogIndex) {
-        if (typeof window !== 'undefined') {
-          console.log('Skipping blog index:', page.route);
-        }
         continue;
       }
 
       // 获取页面的语言
       let pageLang = 'zh';
-      if (page.route.startsWith('/en/')) {
+      if (page.routePath.startsWith('/en/')) {
         pageLang = 'en';
-      } else if (page.route.startsWith('/zh/')) {
+      } else if (page.routePath.startsWith('/zh/')) {
         pageLang = 'zh';
       }
 
@@ -87,7 +65,7 @@ export const useBlogPages = (): BlogItem[] => {
             title: frontMatter.title,
             description: frontMatter.description || '',
             date: frontMatter.date ? new Date(frontMatter.date) : undefined,
-            link: page.route,
+            link: page.routePath,
             authors: frontMatter.author ? [frontMatter.author] : [],
           });
         }
