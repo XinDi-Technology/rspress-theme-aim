@@ -25,6 +25,7 @@ export const useBlogPages = (): BlogItem[] => {
   if (typeof window !== 'undefined') {
     console.log('Base path:', basePath);
     console.log('Current URL:', window.location.href);
+    console.log('Current lang:', currentLang);
   }
 
   // 动态获取博客文章数据
@@ -64,6 +65,11 @@ export const useBlogPages = (): BlogItem[] => {
         pageLang = 'zh';
       }
 
+      // 调试：输出页面的语言信息
+      if (typeof window !== 'undefined') {
+        console.log('Page routePath:', page.routePath, 'pageLang:', pageLang, 'currentLang:', currentLang);
+      }
+
       // 确保当前语言的文章
       if (pageLang === currentLang) {
         const frontMatter = page.frontmatter || {};
@@ -72,11 +78,6 @@ export const useBlogPages = (): BlogItem[] => {
         if (frontMatter.title) {
           // 移除 routePath 开头的斜杠
           let cleanRoute = page.routePath.replace(/^\//, '');
-
-          // 如果 routePath 不包含语言前缀，则添加当前语言前缀
-          if (!cleanRoute.startsWith('zh/') && !cleanRoute.startsWith('en/')) {
-            cleanRoute = `${currentLang}/${cleanRoute}`;
-          }
 
           const link = `${basePath}/${cleanRoute}`;
           if (typeof window !== 'undefined') {
