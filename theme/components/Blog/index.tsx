@@ -23,8 +23,13 @@ export const useBlogPages = (): BlogItem[] => {
     console.log('=== Blog Debug Info ===');
     console.log('Current language:', currentLang);
     console.log('Total pages:', siteData.pages?.length);
-    console.log('All page routes:', siteData.pages?.map(p => p.route));
-    console.log('=====================');
+    console.log('SiteData structure:', siteData);
+
+    if (siteData.pages && siteData.pages.length > 0) {
+      console.log('=== First page object structure ===');
+      console.log(JSON.stringify(siteData.pages[0], null, 2));
+      console.log('========================================');
+    }
   }
 
   // 动态获取博客文章数据
