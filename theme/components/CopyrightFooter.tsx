@@ -26,8 +26,27 @@ export function CopyrightFooter() {
   const startYear = themeConfig?.startYear ?? 2020;
   const endYear = themeConfig?.endYear ?? currentYear;
   
-  // 公司名称：优先使用配置，其次使用站点 title
-  const companyName = themeConfig?.companyName || siteData.title || siteData.locales?.find(loc => loc.lang === siteData.lang)?.title || '人工智能制造';
+  // 获取当前语言
+  const currentLang = siteData.lang || 'zh';
+  
+  // 公司名称：优先使用配置，其次使用当前语言的 title
+  let companyName = themeConfig?.companyName;
+  
+  if (!companyName) {
+    // 尝试从 locales 中获取当前语言的 title
+    const currentLocale = siteData.locales?.find((loc: any) => loc.lang === currentLang);
+    companyName = currentLocale?.title;
+    
+    // 如果没有找到当前语言的 title，使用全局 title
+    if (!companyName) {
+      companyName = siteData.title;
+    }
+    
+    // 如果还是没有，使用默认值
+    if (!companyName) {
+      companyName = currentLang === 'en' ? 'AI Manufacturing · Rspress Theme AIm' : '人工智能制造 · Rspress Theme AIm';
+    }
+  }
   
   // 公司 URL：优先使用配置，其次使用当前域名
   const companyUrl = themeConfig?.companyUrl || (typeof window !== 'undefined' ? window.location.origin : '');
