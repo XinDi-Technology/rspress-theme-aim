@@ -106,13 +106,18 @@ Use `inline code` to mark code snippets.
 
 ### 6.1 Basic Code Block
 
-```javascript
-function hello() {
-  console.log('Hello, world!');
-}
+```
+This is a basic code block
+No syntax highlighting
 ```
 
 ### 6.2 Code Block with Language
+
+```javascript
+function hello() {
+  console.log('Hello, World!');
+}
+```
 
 ```typescript
 interface User {
@@ -121,189 +126,234 @@ interface User {
 }
 
 const user: User = {
-  name: 'John',
-  age: 30
+  name: 'Alice',
+  age: 25
 };
+```
+
+```python
+def greet(name):
+    return f"Hello, {name}!"
+
+print(greet("World"))
+```
+
+```bash
+npm install rspress
+pnpm dev
+```
+
+### 6.3 Code Block Title
+
+```ts title="example.ts"
+const message = 'Hello, Rspress!';
+```
+
+### 6.4 Line Highlighting
+
+```javascript
+function calculateSum(a, b) {
+  // Highlighted line
+  return a + b;
+}
 ```
 
 ---
 
 ## 7. Tables
 
-| Header 1 | Header 2 | Header 3 |
-| -------- | -------- | -------- |
-| Cell 1   | Cell 2   | Cell 3   |
-| Cell 4   | Cell 5   | Cell 6   |
+### 7.1 Basic Table
+
+| Column 1 | Column 2 | Column 3 |
+|----------|----------|----------|
+| Data 1   | Data 2   | Data 3   |
+| Data 4   | Data 5   | Data 6   |
+
+### 7.2 Alignment
+
+| Left Aligned | Center Aligned | Right Aligned |
+|:------------|:-------------:|--------------:|
+| Text 1      | Text 2         | Text 3        |
+| Text 4      | Text 5         | Text 6        |
+
+### 7.3 Complex Table
+
+| Feature | Description | Example |
+|---------|-------------|----------|
+| **Bold** | Bold text | `**text**` |
+| *Italic* | Italic text | `*text*` |
+| `Code` | Inline code | `` `code` `` |
 
 ---
 
 ## 8. Horizontal Rules
 
----
+Horizontal rules are used to create visual separation in documents, you can use three different character combinations:
+
+### 8.1 Short Line
+
+Use three or more `---`:
 
 ---
 
----
+### 8.2 Asterisks
+
+Use three or more `***`:
+
+***
+
+### 8.3 Underscores
+
+Use three or more `___`:
+
+___
+
+**Note**: The three writing styles above render the same as a horizontal line, but the source code is different.
 
 ---
 
-## 9. Mathematical Formulas
+## 9. Footnotes
 
-### 9.1 Inline Formulas
+This is a paragraph with a footnote[^1].
 
-E = mc^2
+Footnotes can be placed anywhere in the document[^2].
 
-### 9.2 Block Formulas
-
-$$
-\int_{a}^{b} f(x) dx
-$$
+[^1]: This is the description of the first footnote
+[^2]: This is the description of the second footnote, can contain **formatted** text.
 
 ---
 
-## 10. Alert Boxes
+## 10. GitHub Markdown Alerts
+
+### 10.1 Note
 
 > [!NOTE]
-> This is a note
+> Useful information that users should know, but is not mandatory.
+
+### 10.2 Tip
 
 > [!TIP]
-> This is a tip
+> Helpful suggestions for optimizing or simplifying operations.
+
+### 10.3 Important
+
+> [!IMPORTANT]
+> Critical information that users must pay attention to.
+
+### 10.4 Warning
 
 > [!WARNING]
-> This is a warning
+> Warning information, indicating potential issues or risks.
+
+### 10.5 Caution
 
 > [!CAUTION]
-> This is a caution
+> Dangerous operations that may cause data loss or security risks.
 
 ---
 
-## 11. Code Blocks with Line Numbers
+## 11. Emoji
 
-```typescript
-// Line 1: Import statement
-import React from 'react';
+😀 😃 😄 😁 😆 🤣 😂
 
-// Line 3: Component definition
-const App = () => {
-  // Line 5: Return statement
-  return <div>Hello World</div>;
-};
+👍 👎 👏 👋 🙏 💪
 
-export default App;
+💻 🖥️ 💾 💿 📱
+
+---
+
+## 12. Mathematical Formulas (if supported)
+
+Inline formula: $E = mc^2$
+
+Block formula:
+
+$$
+\frac{n!}{k!(n-k)!} = \binom{n}{k}
+$$
+
+---
+
+## 13. Special Characters
+
+&copy; &reg; &trade; &euro; &pound; &yen;
+
+&hearts; &spades; &diams; &clubs;
+
+---
+
+## 14. Indentation and Spaces
+
+    Indent 4 spaces
+    Will display as code block
+
+    Second line indented
+
+---
+
+## 15. Performance Testing
+
+### 15.1 Large Text Test
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+### 15.2 Large Code Test
+
+```javascript
+// Large code test
+function complexFunction() {
+  const data = [];
+  for (let i = 0; i < 1000; i++) {
+    data.push({
+      id: i,
+      name: `Item ${i}`,
+      value: Math.random() * 100,
+      timestamp: new Date().toISOString()
+    });
+  }
+  
+  return data.filter(item => item.value > 50)
+    .map(item => ({
+      ...item,
+      formatted: item.value.toFixed(2)
+    }))
+    .sort((a, b) => b.value - a.value);
+}
+
+async function fetchData() {
+  try {
+    const response = await fetch('/api/data');
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.error('Error:', error);
+    throw error;
+  }
+}
 ```
 
 ---
 
-## 12. Definition Lists
+## Summary
 
-Term 1
-: Definition for term 1
+This document covers the following syntax types:
 
-Term 2
-: Definition for term 2
-: Another definition for term 2
+1. ✅ Headings (levels 1-6)
+2. ✅ Text formatting (bold, italic, strikethrough, etc.)
+3. ✅ Lists (unordered, ordered, task lists)
+4. ✅ Links and images
+5. ✅ Blockquotes (support nesting)
+6. ✅ Code blocks (with syntax highlighting)
+7. ✅ Tables (with alignment)
+8. ✅ Horizontal rules
+9. ✅ Footnotes
+10. ✅ GitHub Markdown Alerts
+11. ✅ Emoji
+12. ✅ Mathematical formulas (if supported)
+13. ✅ Special characters
+14. ✅ Indentation and spaces
+15. ✅ Performance testing
 
----
-
-## 13. Footnotes
-
-Here is a footnote reference[^1].
-
-[^1]: This is the footnote content.
-
----
-
-## 14. Table of Contents
-
-[[toc]]
-
----
-
-## 15. Auto Link
-
-https://example.com
-
----
-
-## 16. Reference Link
-
-[Google][google]
-
-[google]: https://google.com
-
----
-
-## 17. Emoji
-
-🎉 🚀 💡
-
----
-
-## 18. Keyboard Shortcuts
-
-++ctrl+alt+delete++
-
----
-
-## 19. Definition Lists
-
-Term 1
-: Definition for term 1
-
-Term 2
-: Definition for term 2
-: Another definition for term 2
-
----
-
-## 20. Timestamp
-
-> [!TIP]
-> Current date: 2024-01-01
-
----
-
-## 21. Color Block
-
-<div style="color: red;">This is red text</div>
-
----
-
-## 22. Details/Summary
-
-<details>
-  <summary>Click to expand</summary>
-  <p>This is hidden content that can be expanded.</p>
-</details>
-
----
-
-## 23. Audio/Video
-
-### 23.1 Audio
-
-<audio controls>
-  <source src="/audio.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-
-### 23.2 Video
-
-<video controls width="250">
-  <source src="/video.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
----
-
-## 24. Mixed Content
-
-### 24.1 Code and Text
-
-Use `console.log()` to print messages, then use **bold** to emphasize important points.
-
-### 24.2 Lists and Links
-
-- [Rspress](https://rspress.rs/)
-- [GitHub](https://github.com/)
-- [Markdown Guide](https://www.markdownguide.org/)
+If you need to add more test cases, please edit this document.
