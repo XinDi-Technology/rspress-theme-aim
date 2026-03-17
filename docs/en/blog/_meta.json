@@ -1,0 +1,15 @@
+[
+  {
+    "text": "Blog Home",
+    "link": "/blog/"
+  },
+  {
+    "text": "Articles",
+    "items": [
+      {
+        "text": "Welcome to Rspress Theme AIm",
+        "link": "/blog/welcome"
+      }
+    ]
+  }
+]

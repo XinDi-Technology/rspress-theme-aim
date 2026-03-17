@@ -1,0 +1,54 @@
+---
+title: Welcome to Rspress Theme AIm
+date: 2026-03-17
+categories:
+  - Announcement
+  - Tutorial
+tags:
+  - Rspress
+  - Theme
+  - Blog
+---
+
+# Welcome to Rspress Theme AIm
+
+## What is Rspress Theme AIm?
+
+Rspress Theme AIm is a documentation theme based on Rspress, providing rich features and a great user experience.
+
+## Key Features
+
+- **Zero Local Setup**: One-click deployment to GitHub Pages
+- **Multi-language Support**: Built-in Chinese and English switching
+- **Copyright Information**: Support custom company name and link
+- **Filing Information**: Support ICP filing and public security filing
+- **SEO Optimization**: Built-in SEO tags and sitemap
+- **Blog Functionality**: Support categories, tags and timeline
+
+## How to Use Blog Functionality
+
+1. **Create Blog Posts**: Create Markdown files in the `docs/en/blog` directory
+2. **Add Front Matter**: Add title, date, categories and tags at the beginning of the article
+3. **Access Blog Page**: Visit the blog list through the `/blog` path
+
+## Example Code
+
+```typescript
+// Blog configuration example
+export default defineConfig({
+  plugins: [
+    pluginBlog({
+      blogFolder: 'blog',
+      blogRouteBasePath: '/blog',
+    }),
+  ],
+});
+```
+
+## Roadmap
+
+- Add more theme customization options
+- Support comment system
+- Optimize mobile experience
+
+Welcome to use Rspress Theme AIm, hope it can bring a better experience to your documentation site!
