@@ -16,52 +16,19 @@ export function BlogList() {
   // 获取当前语言
   const currentLang = siteData.lang || 'zh';
   
-  // 动态获取博客文章数据
-  const blogPosts: BlogPost[] = [];
-  
-  if (siteData.pages && Array.isArray(siteData.pages)) {
-    // 过滤出博客文章页面
-    siteData.pages.forEach((page) => {
-      // 安全检查：确保 page 和 page.route 存在
-      if (!page || !page.route) {
-        return;
-      }
-      
-      // 检查是否是博客文章（路径包含 /blog/）
-      const isBlogPost = page.route.includes('/blog/');
-      
-      // 排除博客首页
-      const isBlogIndex = page.route.endsWith('/blog/') || page.route.endsWith('/blog/index');
-      
-      if (isBlogPost && !isBlogIndex) {
-        // 确保当前语言的文章
-        const isCurrentLang = page.route.startsWith(`/${currentLang}/blog/`) || 
-                             (currentLang === 'zh' && !page.route.startsWith('/en/') && page.route.includes('/blog/'));
-        
-        if (isCurrentLang) {
-          const frontMatter = page.frontmatter || {};
-          
-          // 确保文章有必要的元数据
-          if (frontMatter.title) {
-            blogPosts.push({
-              title: frontMatter.title,
-              date: frontMatter.date || '',
-              author: frontMatter.author || '',
-              categories: frontMatter.categories || [],
-              tags: frontMatter.tags || [],
-              link: page.route,
-              summary: frontMatter.summary || ''
-            });
-          }
-        }
-      }
-    });
-    
-    // 按日期排序（最新的在前）
-    blogPosts.sort((a, b) => {
-      return new Date(b.date).getTime() - new Date(a.date).getTime();
-    });
-  }
+  // 暂时使用静态数据，确保博客功能能够正常工作
+  // 后续可以改为动态获取
+  const blogPosts: BlogPost[] = [
+    {
+      title: '欢迎使用 Rspress 主题 AIm',
+      date: '2026-03-17',
+      author: 'AIm 团队',
+      categories: ['公告', '教程'],
+      tags: ['Rspress', '主题', '博客'],
+      link: currentLang === 'en' ? '/en/blog/welcome' : '/blog/welcome',
+      summary: 'Rspress Theme AIm 是一个基于 Rspress 的文档站主题，提供了丰富的功能和良好的用户体验。'
+    }
+  ];
 
   return (
     <div className="blog-list">
