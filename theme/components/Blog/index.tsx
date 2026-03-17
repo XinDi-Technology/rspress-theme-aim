@@ -84,11 +84,7 @@ export const useBlogPages = (): BlogItem[] => {
 
 export function BlogList({ posts }: BlogProps) {
   if (!posts || posts.length === 0) {
-    return (
-      <div style={{ padding: '2rem', textAlign: 'center', color: '#666' }}>
-        暂无博客文章
-      </div>
-    );
+    return <p className="blog-empty">暂无博客文章</p>;
   }
 
   const formatDate = (date: Date) => {
