@@ -6,6 +6,8 @@ export interface BlogItem {
   date?: Date;
   link?: string;
   authors?: string[];
+  tags?: string[];
+  categories?: string[];
 }
 
 export interface BlogProps {
@@ -96,6 +98,8 @@ export const useBlogPages = (): BlogItem[] => {
             date: frontMatter.date ? new Date(frontMatter.date) : undefined,
             link: link,
             authors: frontMatter.author ? [frontMatter.author] : [],
+            tags: frontMatter.tags || [],
+            categories: frontMatter.categories || [],
           });
         }
       }
@@ -138,6 +142,24 @@ export function BlogList({ posts }: BlogProps) {
               </span>
             )}
           </div>
+          {post.categories && post.categories.length > 0 && (
+            <div className="blog-categories">
+              {post.categories.map((category, catIndex) => (
+                <span key={catIndex} className="blog-category">
+                  {category}
+                </span>
+              ))}
+            </div>
+          )}
+          {post.tags && post.tags.length > 0 && (
+            <div className="blog-tags">
+              {post.tags.map((tag, tagIndex) => (
+                <span key={tagIndex} className="blog-tag">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
           {post.description && <p className="blog-description">{post.description}</p>}
         </article>
       ))}
