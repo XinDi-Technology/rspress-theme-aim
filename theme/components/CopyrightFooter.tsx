@@ -27,7 +27,7 @@ export function CopyrightFooter() {
   const endYear = themeConfig?.endYear ?? currentYear;
   
   // 公司名称：优先使用配置，其次使用站点 title
-  const companyName = themeConfig?.companyName || siteData.title || '人工智能制造';
+  const companyName = themeConfig?.companyName || siteData.title || siteData.locales?.find(loc => loc.lang === siteData.lang)?.title || '人工智能制造';
   
   // 公司 URL：优先使用配置，其次使用当前域名
   const companyUrl = themeConfig?.companyUrl || (typeof window !== 'undefined' ? window.location.origin : '');
