@@ -8,8 +8,8 @@ interface PoweredByLink {
 }
 
 interface ThemeConfig extends DefaultThemeConfig {
-  companyName?: string;
-  companyUrl?: string;
+  companyName: string;
+  companyUrl: string;
   startYear?: number;
   endYear?: number;
   icpNumber?: string;
@@ -26,33 +26,9 @@ export function CopyrightFooter() {
   const startYear = themeConfig?.startYear ?? 2020;
   const endYear = themeConfig?.endYear ?? currentYear;
   
-  // 公司名称：优先使用配置，其次使用站点信息
-  let companyName = themeConfig?.companyName;
-  
-  if (!companyName) {
-    // 尝试从站点信息中获取标题
-    if (typeof siteData.title === 'string') {
-      companyName = siteData.title;
-    } else if (siteData.locales && Array.isArray(siteData.locales)) {
-      // 尝试从当前语言的配置中获取标题
-      const currentLang = siteData.lang || 'zh';
-      const currentLocale = siteData.locales.find((loc: any) => loc.lang === currentLang);
-      if (currentLocale && currentLocale.title) {
-        companyName = currentLocale.title;
-      } else if (siteData.locales[0] && siteData.locales[0].title) {
-        //  fallback 到第一个语言的标题
-        companyName = siteData.locales[0].title;
-      }
-    }
-    
-    // 最后的 fallback
-    if (!companyName) {
-      companyName = 'Rspress Theme AIm';
-    }
-  }
-  
-  // 公司 URL：优先使用配置，其次使用当前域名
-  const companyUrl = themeConfig?.companyUrl || (typeof window !== 'undefined' ? window.location.origin : '');
+  // 公司名称和链接（必填）
+  const companyName = themeConfig?.companyName || '人工智能制造';
+  const companyUrl = themeConfig?.companyUrl || 'https://xindi-technology.github.io/rspress-theme-aim/';
 
   // ICP 备案号
   const icpNumber = themeConfig?.icpNumber;
