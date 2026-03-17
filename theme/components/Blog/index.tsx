@@ -18,6 +18,15 @@ export const useBlogPages = (): BlogItem[] => {
   // 获取当前语言
   const currentLang = siteData.lang || 'zh';
 
+  // 获取 base 路径
+  const basePath = siteData.base || '/';
+
+  // 临时调试
+  if (typeof window !== 'undefined') {
+    console.log('Base path:', basePath);
+    console.log('Current URL:', window.location.href);
+  }
+
   // 动态获取博客文章数据
   const blogPosts: BlogItem[] = [];
 
@@ -61,11 +70,15 @@ export const useBlogPages = (): BlogItem[] => {
 
         // 确保文章有必要的元数据
         if (frontMatter.title) {
+          const link = basePath + page.routePath;
+          if (typeof window !== 'undefined') {
+            console.log('Generated link:', link, 'from routePath:', page.routePath);
+          }
           blogPosts.push({
             title: frontMatter.title,
             description: frontMatter.description || '',
             date: frontMatter.date ? new Date(frontMatter.date) : undefined,
-            link: page.routePath,
+            link: link,
             authors: frontMatter.author ? [frontMatter.author] : [],
           });
         }
