@@ -13,7 +13,7 @@
   padding: 1.5rem;
   border-radius: 8px;
   background-color: var(--rp-c-bg);
-  border: 1px solid var(--rp-c-divider-light);
+  border: none;
   transition: all 0.3s ease;
 }
 
@@ -72,7 +72,6 @@
 /* 暗色模式适配 */
 .dark .blog-item {
   background-color: var(--rp-c-bg);
-  border-color: var(--rp-c-divider-dark);
 }
 
 .dark .blog-item:hover {
