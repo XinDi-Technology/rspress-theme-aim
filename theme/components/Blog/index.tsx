@@ -1,5 +1,4 @@
 import { usePageData } from '@rspress/core/runtime';
-import '../../styles/blog.css';
 
 export interface BlogItem {
   title?: string;
@@ -24,40 +23,54 @@ export const useBlogPages = (): BlogItem[] => {
 
   if (siteData.pages && Array.isArray(siteData.pages)) {
     // 过滤出博客文章页面
-    siteData.pages.forEach((page) => {
+    for (const page of siteData.pages) {
       // 安全检查：确保 page 和 page.route 存在
       if (!page || !page.route) {
-        return;
+        continue;
       }
 
-      // 检查是否是博客文章（路径包含 /blog/）
-      const isBlogPost = page.route.includes('/blog/');
+      // 检查路由中是否包含 blog
+      const hasBlogPath = page.route.includes('/blog');
 
-      // 排除博客首页
-      const isBlogIndex = page.route.endsWith('/blog/') ||
-                        page.route.endsWith('/blog/index');
+      if (!hasBlogPath) {
+        continue;
+      }
 
-      if (isBlogPost && !isBlogIndex) {
-        // 确保当前语言的文章
-        const isCurrentLang = page.route.startsWith(`/${currentLang}/blog/`) ||
-                             (currentLang === 'zh' && !page.route.startsWith('/en/') && page.route.includes('/blog/'));
+      // 排除博客首页（index.mdx）
+      const isBlogIndex =
+        page.route === '/blog' ||
+        page.route === `/${currentLang}/blog` ||
+        page.route.endsWith('/blog/') ||
+        page.route.endsWith('/blog/index');
 
-        if (isCurrentLang) {
-          const frontMatter = page.frontmatter || {};
+      if (isBlogIndex) {
+        continue;
+      }
 
-          // 确保文章有必要的元数据
-          if (frontMatter.title) {
-            blogPosts.push({
-              title: frontMatter.title,
-              description: frontMatter.description || '',
-              date: frontMatter.date ? new Date(frontMatter.date) : undefined,
-              link: page.route,
-              authors: frontMatter.author ? [frontMatter.author] : [],
-            });
-          }
+      // 获取页面的语言
+      let pageLang = 'zh';
+      if (page.route.startsWith('/en/')) {
+        pageLang = 'en';
+      } else if (page.route.startsWith('/zh/')) {
+        pageLang = 'zh';
+      }
+
+      // 确保当前语言的文章
+      if (pageLang === currentLang) {
+        const frontMatter = page.frontmatter || {};
+
+        // 确保文章有必要的元数据
+        if (frontMatter.title) {
+          blogPosts.push({
+            title: frontMatter.title,
+            description: frontMatter.description || '',
+            date: frontMatter.date ? new Date(frontMatter.date) : undefined,
+            link: page.route,
+            authors: frontMatter.author ? [frontMatter.author] : [],
+          });
         }
       }
-    });
+    }
 
     // 按日期排序（最新的在前）
     blogPosts.sort((a, b) => {
@@ -71,7 +84,11 @@ export const useBlogPages = (): BlogItem[] => {
 
 export function BlogList({ posts }: BlogProps) {
   if (!posts || posts.length === 0) {
-    return null;
+    return (
+      <div style={{ padding: '2rem', textAlign: 'center', color: '#666' }}>
+        暂无博客文章
+      </div>
+    );
   }
 
   const formatDate = (date: Date) => {
