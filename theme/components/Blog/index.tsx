@@ -1,5 +1,5 @@
 import { usePageData } from '@rspress/core/runtime';
-import './index.css';
+import '../styles/blog.css';
 
 export interface BlogItem {
   title?: string;
@@ -107,4 +107,3 @@ export function BlogListAuto() {
   const posts = useBlogPages();
   return <BlogList posts={posts} />;
 }
-
