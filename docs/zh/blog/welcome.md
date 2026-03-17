@@ -1,6 +1,7 @@
 ---
 title: 欢迎使用 Rspress 主题 AIm
 date: 2026-03-17
+author: AIm 团队
 categories:
   - 公告
   - 教程
@@ -11,8 +12,6 @@ tags:
 ---
 
 # 欢迎使用 Rspress 主题 AIm
-
-## 什么是 Rspress 主题 AIm？
 
 Rspress 主题 AIm 是一个基于 Rspress 的文档站主题，提供了丰富的功能和良好的用户体验。
 
@@ -30,20 +29,6 @@ Rspress 主题 AIm 是一个基于 Rspress 的文档站主题，提供了丰富�
 1. **创建博客文章**：在 `docs/zh/blog` 目录下创建 Markdown 文件
 2. **添加前置元数据**：在文章开头添加标题、日期、分类和标签
 3. **访问博客页面**：通过 `/blog` 路径访问博客列表
-
-## 示例代码
-
-```typescript
-// 博客配置示例
-export default defineConfig({
-  plugins: [
-    pluginBlog({
-      blogFolder: 'blog',
-      blogRouteBasePath: '/blog',
-    }),
-  ],
-});
-```
 
 ## 下一步计划
 
