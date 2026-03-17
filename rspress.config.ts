@@ -78,7 +78,7 @@ export default defineConfig({
       },
     ],
     // 版权信息配置
-    // companyName: 'A公司',  // 可选，默认为站点 title
+    // companyName: '',  // 可选，默认为站点 title
     // companyUrl: 'https://example.com',  // 可选，默认为当前域名
     startYear: 2025,  // 可选，默认为 2020
     // endYear: 2023,    // 可选，默认为当前年份
