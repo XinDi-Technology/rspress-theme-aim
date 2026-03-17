@@ -6,7 +6,6 @@
 
 - **动态年份**：支持起始年份和结束年份配置
 - **可点击链接**：公司名称可设置为链接
-- **智能默认值**：未配置时自动使用站点信息
 - **Powered by**：显示技术支持链接
 
 ## 配置方法
@@ -19,11 +18,11 @@ import { defineConfig } from '@rspress/core';
 export default defineConfig({
   // ... 其他配置
   themeConfig: {
-    // 版权信息配置（全部可选）
-    companyName: '你的公司名',      // 默认使用站点 title
-    companyUrl: 'https://example.com',  // 默认使用当前域名
-    startYear: 2020,              // 默认 2020
-    endYear: 2025,                // 默认当前年份
+    // 版权信息配置
+    companyName: '你的公司名',      // 必填，公司名称
+    companyUrl: 'https://example.com',  // 必填，公司链接
+    startYear: 2020,              // 可选，默认 2020
+    endYear: 2025,                // 可选，默认当前年份
     // Powered by 配置（可选）
     poweredBy: [
       { name: 'Rspress', url: 'https://rspress.rs/' },
@@ -37,8 +36,8 @@ export default defineConfig({
 
 | 配置项 | 类型 | 必填 | 默认值 | 说明 |
 |--------|------|------|--------|------|
-| `companyName` | string | 否 | 站点 title | 显示的公司名称 |
-| `companyUrl` | string | 否 | 当前域名 | 公司名称的链接地址 |
+| `companyName` | string | 是 | - | 显示的公司名称 |
+| `companyUrl` | string | 是 | - | 公司名称的链接地址 |
 | `startYear` | number | 否 | 2020 | 版权起始年份 |
 | `endYear` | number | 否 | 当前年份 | 版权结束年份 |
 | `poweredBy` | array | 否 | 见下方 | Powered by 链接配置 |
@@ -62,30 +61,10 @@ export default defineConfig({
 
 ## 使用示例
 
-### 示例 1：使用默认值
-
-不配置任何版权信息，将自动使用以下默认值：
-- 公司名称：站点的 `title` 配置
-- 链接：当前访问的域名
-- 年份：2020-当前年份
+### 示例 1：基本配置
 
 ```typescript
 export default defineConfig({
-  title: '我的文档站',
-  themeConfig: {
-    // 不配置任何版权信息
-  },
-});
-```
-
-显示效果：
-> © 2020-2025 我的文档站 · Powered by Rspress & AIm
-
-### 示例 2：自定义公司信息
-
-```typescript
-export default defineConfig({
-  title: '技术文档中心',
   themeConfig: {
     companyName: '示例科技有限公司',
     companyUrl: 'https://www.example.com',
@@ -96,12 +75,13 @@ export default defineConfig({
 显示效果：
 > © 2020-2025 [示例科技有限公司](https://www.example.com) · Powered by Rspress & AIm
 
-### 示例 3：自定义年份范围
+### 示例 2：自定义年份范围
 
 ```typescript
 export default defineConfig({
   themeConfig: {
     companyName: '开源项目',
+    companyUrl: 'https://github.com/example/project',
     startYear: 2019,
     endYear: 2024,
   },
@@ -109,14 +89,15 @@ export default defineConfig({
 ```
 
 显示效果：
-> © 2019-2024 开源项目 · Powered by Rspress & AIm
+> © 2019-2024 [开源项目](https://github.com/example/project) · Powered by Rspress & AIm
 
-### 示例 4：自定义 Powered by
+### 示例 3：自定义 Powered by
 
 ```typescript
 export default defineConfig({
   themeConfig: {
     companyName: '我的项目',
+    companyUrl: 'https://my-project.com',
     poweredBy: [
       { name: 'Vue', url: 'https://vuejs.org/' },
       { name: 'Vite', url: 'https://vitejs.dev/' }
@@ -126,32 +107,32 @@ export default defineConfig({
 ```
 
 显示效果：
-> © 2020-2025 我的项目 · Powered by Vue & Vite
+> © 2020-2025 [我的项目](https://my-project.com) · Powered by Vue & Vite
 
-### 示例 5：禁用 Powered by
+### 示例 4：禁用 Powered by
 
 ```typescript
 export default defineConfig({
   themeConfig: {
     companyName: '我的项目',
+    companyUrl: 'https://my-project.com',
     poweredBy: [],  // 设置为空数组即可禁用
   },
 });
 ```
 
 显示效果：
-> © 2020-2025 我的项目
+> © 2020-2025 [我的项目](https://my-project.com)
 
-### 示例 6：完整配置
+### 示例 5：完整配置
 
 ```typescript
 export default defineConfig({
-  title: '人工智能制造',
   themeConfig: {
-    companyName: 'A公司',
-    companyUrl: 'https://a-company.com',
-    startYear: 2020,
-    endYear: 2025,
+    companyName: '人工智能制造',
+    companyUrl: 'https://xindi-technology.github.io/rspress-theme-aim/',
+    startYear: 2025,
+    endYear: 2026,
     poweredBy: [
       { name: 'Rspress', url: 'https://rspress.rs/' },
       { name: 'AIm', url: 'https://xindi-technology.github.io/rspress-theme-aim' }
@@ -161,7 +142,7 @@ export default defineConfig({
 ```
 
 显示效果：
-> © 2020-2025 [A公司](https://a-company.com) · Powered by Rspress & AIm
+> © 2025-2026 [人工智能制造](https://xindi-technology.github.io/rspress-theme-aim/) · Powered by Rspress & AIm
 
 ## 样式自定义
 
