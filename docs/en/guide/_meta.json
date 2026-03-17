@@ -1,0 +1,42 @@
+[
+  {
+    "type": "file",
+    "name": "index",
+    "label": "gettingStarted"
+  },
+  {
+    "type": "file",
+    "name": "upgrade",
+    "label": "upgrade"
+  },
+  {
+    "type": "file",
+    "name": "copyright",
+    "label": "copyright"
+  },
+  {
+    "type": "file",
+    "name": "icp",
+    "label": "icp"
+  },
+  {
+    "type": "file",
+    "name": "gongan",
+    "label": "gongan"
+  },
+  {
+    "type": "file",
+    "name": "edit-link",
+    "label": "editLink"
+  },
+  {
+    "type": "file",
+    "name": "last-updated",
+    "label": "lastUpdate"
+  },
+  {
+    "type": "file",
+    "name": "home-features",
+    "label": "homeFeatures"
+  }
+]

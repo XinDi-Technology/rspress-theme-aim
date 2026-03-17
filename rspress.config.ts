@@ -5,7 +5,21 @@ import { pluginSitemap } from '@rspress/plugin-sitemap';
 export default defineConfig({
   base: '/rspress-theme-aim/',
   root: path.join(__dirname, 'docs'),
-  title: '人工智能制造 · Rspress Theme AIm',
+  lang: 'zh',
+  locales: [
+    {
+      lang: 'zh',
+      label: '简体中文',
+      title: '人工智能制造 · Rspress Theme AIm',
+      description: '零本地环境 · GitHub Pages 一键部署的 Rspress 文档站模板，支持版权信息、ICP备案、公安备案等功能',
+    },
+    {
+      lang: 'en',
+      label: 'English',
+      title: 'AI Manufacturing · Rspress Theme AIm',
+      description: 'Zero local setup · GitHub Pages one-click deployment Rspress documentation template, supporting copyright information, ICP record, public security record and other features',
+    },
+  ],
   plugins: [
     pluginSitemap({
       siteUrl: 'https://xindi-technology.github.io/rspress-theme-aim/',
