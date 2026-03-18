@@ -1,14 +1,15 @@
 # 博客功能使用指南
 
-Rspress Theme AIm 基于 Rspress 的约定式路由系统实现了博客功能。
+Rspress Theme AIm 提供了完整的博客功能，支持文章管理、分类标签、多语言等特性。
 
 ## 功能特性
 
-- **约定式路由**：基于文件系统自动生成路由
+- **自动列表生成**：基于组件自动展示博客文章列表
 - **Markdown/MDX 支持**：使用标准 Markdown 或 MDX 格式编写文章
 - **Frontmatter 元数据**：支持标题、日期、作者、分类、标签等元数据配置
 - **多语言支持**：中文和英文博客独立管理
-- **侧边栏导航**：自动生成博客文章的侧边栏导航
+- **文章导航**：自动生成上一篇/下一篇导航
+- **响应式设计**：适配各种屏幕尺寸
 
 ## 目录结构
 
@@ -18,14 +19,18 @@ docs/
 │   ├── blog/                    # 中文博客
 │   │   ├── index.mdx           # 博客首页
 │   │   ├── _meta.json         # 博客导航配置
-│   │   └── welcome.mdx        # 博客文章
+│   │   └── *.mdx              # 博客文章
 │   └── _nav.json              # 主导航配置
 └── en/                          # 英文文档
     ├── blog/                    # 英文博客
     │   ├── index.mdx
     │   ├── _meta.json
-    │   └── welcome.mdx
+    │   └── *.mdx
     └── _nav.json
+theme/
+└── components/
+    └── Blog/
+        └── index.tsx           # 博客列表组件
 ```
 
 ## 创建博客文章
@@ -50,6 +55,7 @@ tags:
   - 标签1
   - 标签2
 description: 文章摘要
+sidebar: false
 ---
 ```
 
@@ -63,6 +69,7 @@ description: 文章摘要
 | `categories` | string[] | 否 | 文章分类列表 |
 | `tags` | string[] | 否 | 文章标签列表 |
 | `description` | string | 是 | 文章摘要，在博客列表中显示 |
+| `sidebar` | boolean | 否 | 是否显示侧边栏，博客文章建议设置为 `false` |
 
 ### 3. 编写文章内容
 
@@ -77,6 +84,8 @@ categories:
   - 技术
 tags:
   - Rspress
+description: 这是一篇关于 Rspress 的技术文章
+sidebar: false
 ---
 
 # 文章标题
@@ -106,6 +115,30 @@ function hello() {
 ![图片描述](/images/example.png)
 ```
 
+## 博客首页配置
+
+`index.mdx` 文件是博客首页，需要导入并使用博客列表组件：
+
+```markdown
+---
+sidebar: false
+---
+
+import { BlogListAuto } from '@theme/components/Blog';
+
+# 博客
+
+欢迎来到 Rspress Theme AIm 的博客页面。
+
+<BlogListAuto />
+```
+
+`BlogListAuto` 组件会自动：
+- 获取当前语言的所有博客文章
+- 按日期排序（最新的在前）
+- 显示文章列表，包含标题、日期、作者、分类、标签和摘要
+- 支持响应式设计
+
 ## 配置博客导航
 
 ### _meta.json 配置
@@ -123,6 +156,7 @@ function hello() {
     "type": "section-header",
     "label": "博客"
   },
+  "blog",
   "welcome",
   "another-post"
 ]
@@ -153,32 +187,32 @@ function hello() {
 ]
 ```
 
-## 博客首页
+**注意**：中文版链接应为 `/zh/blog`，英文版链接应为 `/en/blog`。
 
-`index.mdx` 文件是博客首页，可以包含：
+## 文章导航
 
-- 博客介绍
-- 最新文章列表
-- 博客使用说明
+### 上一篇/下一篇导航
 
-示例内容：
+博客文章底部会自动显示上一篇和下一篇的导航链接，基于日期排序。
 
-```markdown
----
-sidebar: false
----
+- 文章按日期降序排列（最新的在前）
+- 点击"上一篇"查看更早的文章
+- 点击"下一篇"查看更新的文章
 
-# 博客
+### 自定义导航样式
 
-欢迎来到 Rspress Theme AIm 的博客页面。
+导航样式定义在 `theme/styles/blog.css` 中，可以根据需要自定义：
 
-## 最新文章
-
-这里是博客文章的介绍和链接...
-
-## 如何使用
-
-详细的使用说明...
+```css
+/* 博客文章导航 */
+.blog-post-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--rp-c-divider-light);
+}
 ```
 
 ## 文件命名规范
@@ -196,17 +230,34 @@ Rspress 支持 MDX，你可以在 Markdown 中使用 React 组件：
 title: 使用 MDX 组件
 ---
 
-import { Alert } from '@theme/components/Alert';
+import { BlogPost } from '@theme';
 
-<Alert type="info">
-这是一个信息提示框
-</Alert>
+<BlogPost>
+
+文章内容...
+
+</BlogPost>
 ```
+
+使用 `<BlogPost>` 组件包裹文章内容可以自动添加上一篇/下一篇导航。
 
 ## 访问博客
 
-- 博客首页：`/blog/`
-- 单篇文章：`/blog/welcome`（文件名为 `welcome.mdx`）
+- 博客首页：`/blog/`（自动根据语言跳转）
+- 中文博客：`/blog/`
+- 英文博客：`/en/blog/`
+- 单篇文章：`/blog/welcome` 或 `/zh/blog/welcome`
+
+## 博客列表样式
+
+博客列表组件提供了以下样式：
+
+- **文章卡片**：无边框设计，简洁美观
+- **分类标签**：蓝色背景，突出显示
+- **标签**：灰色背景，辅助分类
+- **响应式布局**：移动端自动调整
+
+样式文件位置：`theme/styles/blog.css`
 
 ## 最佳实践
 
@@ -214,20 +265,94 @@ import { Alert } from '@theme/components/Alert';
 2. **日期格式**：统一使用 `YYYY-MM-DD` 格式
 3. **分类标签**：合理使用分类和标签，便于文章归档
 4. **SEO 优化**：为重要文章添加 `description` 字段
-5. **图片管理**：将图片放在 `docs/public/` 目录下
+5. **侧边栏设置**：博客文章建议设置 `sidebar: false`
+6. **图片管理**：将图片放在 `docs/public/` 目录下
+7. **文件命名**：使用有意义的文件名，便于维护
 
-## 与官方对比
+## 常见问题
 
-与 Rspress 官方博客实现保持一致：
+### Q: 为什么博客列表不显示文章？
 
-- ✅ 使用约定式路由
-- ✅ 使用 `.mdx` 文件格式
-- ✅ 使用 frontmatter 配置元数据
-- ✅ 使用 `_meta.json` 配置导航
-- ✅ 支持多语言
+A: 请检查：
+1. 文件是否在 `docs/zh/blog/` 或 `docs/en/blog/` 目录下
+2. frontmatter 中是否包含 `title` 和 `date` 字段
+3. 文件名是否与 `_meta.json` 中的引用一致
 
-## 下一步
+### Q: 如何修改博客列表的排序方式？
 
-- 查看示例文章：`docs/zh/blog/welcome.mdx`
-- 参考官方实现：https://github.com/web-infra-dev/rspress/tree/main/website/docs/zh/blog
-- 阅读 Rspress 文档：https://rspress.rs
+A: 修改 `theme/components/Blog/index.tsx` 中的排序逻辑：
+
+```typescript
+blogPosts.sort((a, b) => {
+  // 当前是按日期降序（最新的在前）
+  if (!a.date && !b.date) return 0;
+  if (!a.date) return 1;
+  if (!b.date) return -1;
+  return b.date.getTime() - a.date.getTime();
+});
+```
+
+### Q: 如何自定义博客样式？
+
+A: 编辑 `theme/styles/blog.css` 文件，可以修改：
+- 文章卡片样式
+- 分类和标签样式
+- 导航样式
+- 响应式布局
+
+### Q: 博客文章支持哪些 Markdown 语法？
+
+A: Rspress 支持标准的 Markdown 语法，包括：
+- 标题、段落、列表
+- 代码块（支持语法高亮）
+- 链接、图片
+- 表格
+- 引用
+- 任务列表
+- MDX 组件
+
+## 扩展功能
+
+### 添加更多元数据
+
+可以在 `BlogItem` 接口中添加更多字段：
+
+```typescript
+export interface BlogItem {
+  title?: string;
+  description?: string;
+  date?: Date;
+  link?: string;
+  authors?: string[];
+  tags?: string[];
+  categories?: string[];
+  // 添加自定义字段
+  readingTime?: number;
+  featured?: boolean;
+}
+```
+
+### 集成评论系统
+
+可以在博客文章中集成第三方评论系统，如 Giscus、Gitalk 等。
+
+### 添加搜索功能
+
+可以集成搜索插件，提供博客文章搜索功能。
+
+## 示例
+
+### 完整的博客文章示例
+
+查看 `docs/zh/blog/welcome.mdx` 和 `docs/en/blog/welcome.mdx` 获取完整示例。
+
+### 博客首页示例
+
+查看 `docs/zh/blog/index.mdx` 和 `docs/en/blog/index.mdx` 获取博客首页配置示例。
+
+## 参考资源
+
+- Rspress 官方文档：https://rspress.rs
+- Rspress GitHub：https://github.com/web-infra-dev/rspress
+- 博客列表组件：`theme/components/Blog/index.tsx`
+- 博客样式：`theme/styles/blog.css`
