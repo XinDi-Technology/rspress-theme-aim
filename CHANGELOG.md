@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - 升级 release.yml 中 actions/github-script 从 v6 到 v8（Node 24 运行时）
+- 统一 release.yml 中 pnpm 安装方式为 pnpm/action-setup@v4，与 deploy.yml 保持一致
 
 ## [2.2.0] - 2026-03-18
 
