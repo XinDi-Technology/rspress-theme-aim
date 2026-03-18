@@ -101,12 +101,15 @@ function getBlogPosts(siteData: any, currentLang: string) {
     }
   }
 
-  // 按日期排序（最新的在前）
+  // 按日期排序（最新的在前），日期相同则按标题排序
   blogPosts.sort((a, b) => {
     if (!a.date && !b.date) return 0;
     if (!a.date) return 1;
     if (!b.date) return -1;
-    return b.date.getTime() - a.date.getTime();
+    const dateDiff = b.date.getTime() - a.date.getTime();
+    if (dateDiff !== 0) return dateDiff;
+    // 日期相同，按标题排序
+    return a.title.localeCompare(b.title);
   });
 
   return blogPosts;
