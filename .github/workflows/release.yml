@@ -58,7 +58,7 @@ jobs:
           echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Create GitHub Release
-        uses: actions/github-script@v6
+        uses: actions/github-script@v8
         env:
           VERSION: ${{ steps.extract_version.outputs.version }}
           NOTES: ${{ steps.get_release_notes.outputs.notes }}

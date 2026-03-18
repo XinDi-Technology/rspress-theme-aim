@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.3.0] - 2026-03-18
+
+### Changed
+
+- 升级 release.yml 中 actions/github-script 从 v6 到 v8（Node 24 运行时）
+
 ## [2.2.0] - 2026-03-18
 
 ### Added
