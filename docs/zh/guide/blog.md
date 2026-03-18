@@ -189,32 +189,6 @@ import { BlogListAuto } from '@theme/components/Blog';
 
 **注意**：中文版链接应为 `/zh/blog`，英文版链接应为 `/en/blog`。
 
-## 文章导航
-
-### 上一篇/下一篇导航
-
-博客文章底部会自动显示上一篇和下一篇的导航链接，基于日期排序。
-
-- 文章按日期降序排列（最新的在前）
-- 点击"上一篇"查看更早的文章
-- 点击"下一篇"查看更新的文章
-
-### 自定义导航样式
-
-导航样式定义在 `theme/styles/blog.css` 中，可以根据需要自定义：
-
-```css
-/* 博客文章导航 */
-.blog-post-nav {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--rp-c-divider-light);
-}
-```
-
 ## 文件命名规范
 
 - 使用小写字母、数字和连字符
@@ -236,8 +210,6 @@ import { Alert } from '@theme/components/Alert';
 这是一个信息提示框
 </Alert>
 ```
-
-博客文章会自动显示上一篇/下一篇导航，无需手动添加组件包装。
 
 ## 访问博客
 

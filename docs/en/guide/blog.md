@@ -189,32 +189,6 @@ Add blog entry in `_nav.json`:
 
 **Note**: Chinese version link should be `/zh/blog`, English version link should be `/en/blog`.
 
-## Article Navigation
-
-### Previous/Next Navigation
-
-The bottom of blog articles will automatically display previous and next navigation links, sorted by date.
-
-- Articles are sorted in descending order by date (newest first)
-- Click "Previous" to view earlier articles
-- Click "Next" to view newer articles
-
-### Custom Navigation Styles
-
-Navigation styles are defined in `theme/styles/blog.css`, can be customized as needed:
-
-```css
-/* Blog article navigation */
-.blog-post-nav {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--rp-c-divider-light);
-}
-```
-
 ## File Naming Conventions
 
 - Use lowercase letters, numbers, and hyphens
@@ -236,8 +210,6 @@ import { Alert } from '@theme/components/Alert';
 This is an info alert box
 </Alert>
 ```
-
-Blog posts automatically display previous/next navigation, no manual component wrapping required.
 
 ## Accessing the Blog
 
