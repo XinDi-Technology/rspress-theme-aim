@@ -30,13 +30,6 @@ export const useBlogPages = (): BlogItem[] => {
   // 获取 base 路径并移除末尾斜杠
   const basePath = (siteData.base || '/').replace(/\/$/, '');
 
-  // 临时调试
-  if (typeof window !== 'undefined') {
-    console.log('Base path:', basePath);
-    console.log('Current URL:', window.location.href);
-    console.log('Current lang:', currentLang);
-  }
-
   // 动态获取博客文章数据
   const blogPosts: BlogItem[] = [];
 
@@ -74,11 +67,6 @@ export const useBlogPages = (): BlogItem[] => {
         pageLang = 'zh';
       }
 
-      // 调试：输出页面的语言信息
-      if (typeof window !== 'undefined') {
-        console.log('Page routePath:', page.routePath, 'pageLang:', pageLang, 'currentLang:', currentLang);
-      }
-
       // 确保当前语言的文章
       if (pageLang === currentLang) {
         const frontMatter = page.frontmatter || {};
@@ -89,9 +77,6 @@ export const useBlogPages = (): BlogItem[] => {
           let cleanRoute = page.routePath.replace(/^\//, '');
 
           const link = `${basePath}/${cleanRoute}`;
-          if (typeof window !== 'undefined') {
-            console.log('Generated link:', link, 'from routePath:', page.routePath);
-          }
           blogPosts.push({
             title: frontMatter.title,
             description: frontMatter.description || '',
@@ -105,9 +90,11 @@ export const useBlogPages = (): BlogItem[] => {
       }
     }
 
-    // 按日期排序（最新的在前）
+    // 按日期排序（最新的在前，无日期的排在最后）
     blogPosts.sort((a, b) => {
-      if (!a.date || !b.date) return 0;
+      if (!a.date && !b.date) return 0;
+      if (!a.date) return 1;
+      if (!b.date) return -1;
       return b.date.getTime() - a.date.getTime();
     });
   }
@@ -129,8 +116,8 @@ export function BlogList({ posts }: BlogProps) {
 
   return (
     <div className="blog-list">
-      {posts.map((post, index) => (
-        <article key={index} className="blog-item">
+      {posts.map((post) => (
+        <article key={post.link || post.title} className="blog-item">
           <a href={post.link} className="blog-title">
             <h2>{post.title}</h2>
           </a>
@@ -144,8 +131,8 @@ export function BlogList({ posts }: BlogProps) {
           </div>
           {post.categories && post.categories.length > 0 && (
             <div className="blog-categories">
-              {post.categories.map((category, catIndex) => (
-                <span key={catIndex} className="blog-category">
+              {post.categories.map((category) => (
+                <span key={category} className="blog-category">
                   {category}
                 </span>
               ))}
@@ -153,8 +140,8 @@ export function BlogList({ posts }: BlogProps) {
           )}
           {post.tags && post.tags.length > 0 && (
             <div className="blog-tags">
-              {post.tags.map((tag, tagIndex) => (
-                <span key={tagIndex} className="blog-tag">
+              {post.tags.map((tag) => (
+                <span key={tag} className="blog-tag">
                   {tag}
                 </span>
               ))}

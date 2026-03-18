@@ -127,11 +127,6 @@
 }
 
 .dark .blog-category {
-  background-color: var(--rp-c-brand-dark);
-  color: var(--rp-c-brand-light);
-}
-
-.dark .blog-category {
   background-color: #1e3a5f;
   color: #64b5f6;
 }
