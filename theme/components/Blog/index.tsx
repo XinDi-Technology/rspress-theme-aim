@@ -73,10 +73,7 @@ export const useBlogPages = (): BlogItem[] => {
 
         // 确保文章有必要的元数据
         if (frontMatter.title) {
-          // 移除 routePath 开头的斜杠
-          let cleanRoute = page.routePath.replace(/^\//, '');
-
-          const link = `${basePath}/${cleanRoute}`;
+          const link = `${basePath}${page.routePath}`;
           blogPosts.push({
             title: frontMatter.title,
             description: frontMatter.description || '',

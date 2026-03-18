@@ -1,7 +1,19 @@
 import { usePageData } from '@rspress/core/runtime';
+import { useEffect, useState } from 'react';
 
 export function BlogPostNav() {
   const { page, siteData } = usePageData();
+  const [isMounted, setIsMounted] = useState(false);
+
+  // 确保只在客户端渲染
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  // 如果还没挂载，返回 null 避免 hydration 错误
+  if (!isMounted) {
+    return null;
+  }
 
   // 获取当前语言
   let currentLang = 'zh';
@@ -31,8 +43,8 @@ export function BlogPostNav() {
 
   // 生成链接
   const getLink = (routePath: string) => {
-    const cleanRoute = routePath.replace(/^\//, '');
-    return `${basePath}/${cleanRoute}`;
+    // 直接使用 routePath，它已经包含了正确的路径
+    return `${basePath}${routePath}`;
   };
 
   return (
