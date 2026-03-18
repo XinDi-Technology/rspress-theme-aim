@@ -6,8 +6,7 @@ body:
       value: |
         Before opening a new issue please:
 
-        - Verify you have the latest versions of Rspress Theme AIm
-          installed by running `bundle update`.
+        - Verify you have the latest versions of Rspress Theme AIm.
         - Thoroughly read the theme's documentation at
           https://xindi-technology.github.io/rspress-theme-aim/guide/index.html
           or
