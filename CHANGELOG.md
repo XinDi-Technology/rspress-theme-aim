@@ -9,23 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- 博客功能（基于 Rspress 官方实现方式）
-  - 约定式路由支持
-  - MDX 文件格式
-  - Frontmatter 元数据配置（标题、日期、作者、分类、标签）
-  - _meta.json 导航配置
-  - 博客首页和文章页
-- 博客功能使用文档（中英文版本）
-  - 创建博客文章指南
-  - Frontmatter 配置说明
-  - _meta.json 配置指南
-  - 最佳实践和文件命名规范
+- 博客功能
+- 多语言（中文/英文）功能
 
-### Changed
+### Fixed
 
-- 重构博客功能实现，采用 Rspress 官方推荐方式
-- 移除自定义 Blog 组件和样式
-- 更新博客首页和示例文章格式
+- 版权信息问题，通过增加多语言设置解决
 
 ## [2.1.0] - 2026-03-14
 
