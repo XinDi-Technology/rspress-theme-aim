@@ -230,16 +230,14 @@ Rspress supports MDX, you can use React components in Markdown:
 title: Using MDX Components
 ---
 
-import { BlogPost } from '@theme';
+import { Alert } from '@theme/components/Alert';
 
-<BlogPost>
-
-Article content...
-
-</BlogPost>
+<Alert type="info">
+This is an info alert box
+</Alert>
 ```
 
-Wrapping article content with `<BlogPost>` component automatically adds previous/next navigation.
+Blog posts automatically display previous/next navigation, no manual component wrapping required.
 
 ## Accessing the Blog
 

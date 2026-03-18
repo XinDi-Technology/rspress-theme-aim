@@ -230,16 +230,14 @@ Rspress 支持 MDX，你可以在 Markdown 中使用 React 组件：
 title: 使用 MDX 组件
 ---
 
-import { BlogPost } from '@theme';
+import { Alert } from '@theme/components/Alert';
 
-<BlogPost>
-
-文章内容...
-
-</BlogPost>
+<Alert type="info">
+这是一个信息提示框
+</Alert>
 ```
 
-使用 `<BlogPost>` 组件包裹文章内容可以自动添加上一篇/下一篇导航。
+博客文章会自动显示上一篇/下一篇导航，无需手动添加组件包装。
 
 ## 访问博客
 
