@@ -25,10 +25,14 @@ features:
   - title: Extensible
     details: Can be extended with custom themes, CSS variables, and plugin ecosystem as needed.
     icon: 🌍
-    span: 6
+    span: 4
   - title: Compliance Ready
     details: Integrated with ICP record display and public security record display to meet Chinese compliance requirements.
     icon: 🌈
-    span: 6
+    span: 4
     link: /guide/icp
+  - title: Simple Blog Functionality
+    details: Support Markdown/MDX format, Frontmatter metadata configuration, and multi-language support.
+    icon: 📝
+    span: 4
 ---
