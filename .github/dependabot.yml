@@ -9,13 +9,9 @@ updates:
       - "dependencies"
     commit-message:
       prefix: "chore"
-    groups:
-      rspress:
-        patterns:
-          - "@rspress/*"
-        update-types:
-          - "minor"
-          - "patch"
+    ignore:
+      - dependency-name: "@rspress/*"
+        update-types: ["version-update:semver-major"]
 
   - package-ecosystem: "github-actions"
     directory: "/"
