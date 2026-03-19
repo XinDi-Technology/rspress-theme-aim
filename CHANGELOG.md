@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - 添加 Dependabot 配置，自动更新 npm 包和 GitHub Actions 依赖
+- 添加 CI workflow，用于 PR 和 push 时的构建检查
 
 ### Changed
 
