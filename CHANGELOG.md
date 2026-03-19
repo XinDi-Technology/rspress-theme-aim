@@ -7,10 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.3.0] - 2026-03-18
 
+### Added
+
+- 添加 Dependabot 配置，自动更新 npm 包和 GitHub Actions 依赖
+
 ### Changed
 
 - 升级 release.yml 中 actions/github-script 从 v6 到 v8（Node 24 运行时）
 - 统一 release.yml 中 pnpm 安装方式为 pnpm/action-setup@v4，与 deploy.yml 保持一致
+
+### Fixed
+
+- 修复博客国际化问题：当没有英文博客文章时显示中文"暂无博客文章" ([#1](https://github.com/xindi-technology/rspress-theme-aim/issues/1))
+- 修复博客日期格式化国际化问题，使用统一的 `toLocaleDateString` 方法
 
 ## [2.2.0] - 2026-03-18
 
