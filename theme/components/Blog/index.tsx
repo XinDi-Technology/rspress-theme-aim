@@ -1,4 +1,4 @@
-import { usePageData } from '@rspress/core/runtime';
+import { usePageData, useLang, useI18n } from '@rspress/core/runtime';
 
 export interface BlogItem {
   title?: string;
@@ -103,15 +103,20 @@ export const useBlogPages = (): BlogItem[] => {
 };
 
 export function BlogList({ posts }: BlogProps) {
+  const lang = useLang();
+  const t = useI18n<typeof import('i18n')>();
+
   if (!posts || posts.length === 0) {
-    return <p className="blog-empty">暂无博客文章</p>;
+    return <p className="blog-empty">{t('blogEmpty')}</p>;
   }
 
   const formatDate = (date: Date) => {
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const day = String(date.getDate()).padStart(2, '0');
-    return `${year}年${month}月${day}日`;
+    const options: Intl.DateTimeFormatOptions = { 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    };
+    return date.toLocaleDateString(lang === 'en' ? 'en-US' : 'zh-CN', options);
   };
 
   return (

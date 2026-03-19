@@ -42,5 +42,17 @@
   "homeFeatures": {
     "en": "Home Features",
     "zh": "首页特性"
+  },
+  "blog": {
+    "en": "Blog",
+    "zh": "博客"
+  },
+  "blogEmpty": {
+    "en": "No blog posts yet",
+    "zh": "暂无博客文章"
+  },
+  "blogLatestPosts": {
+    "en": "Latest Posts",
+    "zh": "最新文章"
   }
 }
