@@ -16,18 +16,29 @@ jobs:
 
       - name: Setup Git
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Clone template repository
+      - name: Sync core files
         env:
           TEMPLATE_TOKEN: ${{ secrets.TEMPLATE_REPO_TOKEN }}
         run: |
-          git clone https://x-access-token:${TEMPLATE_TOKEN}@github.com/XinDi-Technology/rspress-theme-aim-template.git template-repo
-
-      - name: Sync core files
-        run: |
+          # Create temp directory for template
+          mkdir -p template-repo
           cd template-repo
+          
+          # Initialize git
+          git init
+          git remote add origin https://x-access-token:${TEMPLATE_TOKEN}@github.com/XinDi-Technology/rspress-theme-aim-template.git
+          
+          # Try to fetch existing content
+          if git fetch origin 2>/dev/null; then
+            echo "Repository has content, checking out main branch..."
+            git checkout -b main origin/main 2>/dev/null || git checkout -b main
+          else
+            echo "Repository is empty, creating new main branch..."
+            git checkout -b main
+          fi
           
           # Sync theme directory
           rm -rf theme
@@ -133,4 +144,12 @@ jobs:
           cd template-repo
           git add -A
           git commit -m "sync: update from rspress-theme-aim@${{ github.event.release.tag_name || 'latest' }}" || echo "No changes to commit"
-          git push origin main
+          
+          # Check if this is a new repository (no remote)
+          if git rev-parse --verify origin/main >/dev/null 2>&1; then
+            echo "Pushing to existing repository..."
+            git push origin main
+          else
+            echo "Pushing to new repository..."
+            git push -u origin main
+          fi
