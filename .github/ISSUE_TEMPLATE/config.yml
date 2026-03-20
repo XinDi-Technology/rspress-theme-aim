@@ -5,16 +5,7 @@ contact_links:
     about: Check the documentation before opening an issue / 在创建 Issue 前请查看文档
   - name: ❓ Ask a Question / 提问
     url: https://github.com/XinDi-Technology/rspress-theme-aim/discussions/new?category=q-a
-    about: |
-      Ask questions about the project. Please provide:
-      - Clear description of your question
-      - Relevant context
-      - What you've already tried
-      
-      在项目中提问。请提供：
-      - 清晰的问题描述
-      - 相关上下文
-      - 你已经尝试过的方法
+    about: Ask questions about the project. Please provide clear description of your question, relevant context, and what you've already tried. / 在项目中提问。请提供清晰的问题描述、相关上下文、你已经尝试过的方法。
   - name: 💬 General Discussions / 综合讨论
     url: https://github.com/XinDi-Technology/rspress-theme-aim/discussions
     about: Join the community discussions / 参与社区讨论
