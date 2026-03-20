@@ -1,0 +1,103 @@
+name: Feature Request / 功能请求
+description: Suggest a new feature for this project / 为项目建议新功能
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for suggesting a new feature! Before opening a new issue please:
+        感谢你建议新功能！在创建新 Issue 之前，请：
+
+        - Check if the feature has already been requested at https://github.com/XinDi-Technology/rspress-theme-aim/issues
+        - 检查功能是否已经在 https://github.com/XinDi-Technology/rspress-theme-aim/issues 中请求过
+
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: Feature Description / 功能描述
+      description: |
+        A clear and concise description of the feature you want.
+        清晰简洁地描述你希望的功能。
+      placeholder: |
+        Describe the feature you would like to see implemented.
+        描述你希望看到实现的功能。
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use Case / 使用场景
+      description: |
+        Describe why this feature is needed and what problem it solves.
+        描述为什么需要这个功能，它解决了什么问题。
+      placeholder: |
+        What problem does this feature solve? Why do you need it?
+        这个功能解决了什么问题？你为什么需要它？
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior / 期望行为
+      description: |
+        Describe how this feature should work.
+        描述这个功能应该如何工作。
+      placeholder: |
+        How should this feature work? What should the user experience be?
+        这个功能应该如何工作？用户体验应该是什么？
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered / 考虑过的替代方案
+      description: |
+        A clear description of any alternative solutions or features you've considered.
+        清晰描述你考虑过的其他解决方案或功能。
+      placeholder: |
+        Have you considered any alternative solutions or features?
+        你是否考虑过任何替代解决方案或功能？
+    validations:
+      required: false
+
+  - type: textarea
+    id: implementation-ideas
+    attributes:
+      label: Implementation Ideas / 实现想法
+      description: |
+        If you have ideas on how to implement this feature, please describe them here.
+        如果你有如何实现这个功能的想法，请在这里描述。
+      placeholder: |
+        Do you have any ideas on how this feature could be implemented?
+        你对如何实现这个功能有什么想法吗？
+    validations:
+      required: false
+
+  - type: dropdown
+    id: willing-to-pr
+    attributes:
+      label: Would you be willing to submit a PR? / 你愿意提交 PR 吗？
+      description: |
+        Are you willing to submit a Pull Request to implement this feature?
+        你是否愿意提交 Pull Request 来实现这个功能？
+      options:
+        - Yes, I'm willing to submit a PR / 是，我愿意提交 PR
+        - No, I'm not able to submit a PR / 否，我无法提交 PR
+        - Maybe, I need more information / 也许，我需要更多信息
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context / 其他信息
+      description: |
+        Add any other context or screenshots about the feature request here.
+        添加任何其他关于功能请求的上下文或截图。
+      placeholder: |
+        Any other information that might be helpful.
+        任何可能有帮助的其他信息。
+    validations:
+      required: false

@@ -1,0 +1,81 @@
+name: Documentation Issue / 文档问题
+description: Report missing or incorrect documentation / 报告缺失或不正确的文档
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve our documentation! Before opening a new issue please:
+        感谢你帮助改进我们的文档！在创建新 Issue 之前，请：
+
+        - Check if the issue has already been reported at https://github.com/XinDi-Technology/rspress-theme-aim/issues
+        - 检查问题是否已经在 https://github.com/XinDi-Technology/rspress-theme-aim/issues 中报告过
+
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: Type of Documentation Issue / 文档问题类型
+      description: What type of documentation issue is this? / 这是什么类型的文档问题？
+      options:
+        - Missing documentation / 缺失文档
+        - Incorrect information / 错误信息
+        - Unclear explanation / 解释不清楚
+        - Outdated content / 内容过时
+        - Typo or formatting / 拼写或格式错误
+        - Translation needed / 需要翻译
+        - Other / 其他
+    validations:
+      required: true
+
+  - type: textarea
+    id: location
+    attributes:
+      label: Documentation Location / 文档位置
+      description: |
+        Where is the documentation issue? Please provide the file path or URL.
+        文档问题在哪里？请提供文件路径或 URL。
+      placeholder: |
+        e.g. / 例如：
+        - docs/guide/index.md
+        - README.md
+        - https://xindi-technology.github.io/rspress-theme-aim/guide/
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-content
+    attributes:
+      label: Current Content / 当前内容
+      description: |
+        What does the documentation currently say? Please copy the relevant section.
+        文档当前说了什么？请复制相关部分。
+      placeholder: |
+        Copy and paste the current documentation content here.
+        在这里复制粘贴当前的文档内容。
+    validations:
+      required: false
+
+  - type: textarea
+    id: suggested-improvement
+    attributes:
+      label: Suggested Improvement / 建议改进
+      description: |
+        What should the documentation say instead? Please provide your suggested improvement.
+        文档应该说什么？请提供你的建议改进。
+      placeholder: |
+        Describe how the documentation should be improved.
+        描述文档应该如何改进。
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context / 其他信息
+      description: |
+        Add any other context about the documentation issue here.
+        添加任何其他关于文档问题的上下文。
+
+        Screenshots can be included if they help illustrate the issue.
+        如果截图有助于说明问题，也可以包含在内。
+    validations:
+      required: false

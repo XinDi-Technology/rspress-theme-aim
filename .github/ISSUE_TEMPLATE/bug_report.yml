@@ -1,86 +1,97 @@
-name: Bug Report
-description: There is something wrong with the theme. 99% of the time you should select Support below.
+name: Bug Report / Bug 报告
+description: There is something wrong with the theme. 99% of the time you should select Support below. / 主题有问题。99% 的情况下你应该选择下面的支持选项。
 body:
   - type: markdown
     attributes:
       value: |
         Before opening a new issue please:
+        在创建新 Issue 之前，请：
 
-        - Verify you have the latest versions of Rspress Theme AIm.
-        - Thoroughly read the theme's documentation at
+        - Verify you have the latest versions of Rspress Theme AIm. / 确认你使用的是最新版本的 Rspress Theme AIm。
+        - Thoroughly read the theme's documentation at / 仔细阅读主题文档：
           https://xindi-technology.github.io/rspress-theme-aim/guide/index.html
-          or
+          or / 或
           https://rspress.rs/guide/start/introduction
         - Search all issues at https://github.com/XinDi-Technology/rspress-theme-aim/issues
-          for solutions and to avoid duplication.
+          for solutions and to avoid duplication. / 搜索所有 Issue 以寻找解决方案并避免重复。
 
         If none of the above solved your problem, you can continue below.
+        如果以上都没有解决你的问题，你可以继续下面。
 
   - type: textarea
     id: environment
     attributes:
-      label: Theme version and system environment
+      label: Theme version and system environment / 主题版本和系统环境
       description: |
         Please include theme version, public git repository, whether
         you are hosting with GitHub Pages, and the operating system you tested with.
+        请包括主题版本、公开 git 仓库、是否使用 GitHub Pages 托管，以及你测试的操作系统。
 
         Issues without a link to a public repository or ZIP file will likely go ignored.
         Being able to see your actual files is necessary to troubleshoot, as most
         issues stem from invalid/missing YAML Front Matter, a mis-configured _config.yml
         file, or problematic site content.
+        没有公开仓库链接或 ZIP 文件的 Issue 可能会被忽略。能够查看你的实际文件对于故障排除是必要的，因为大多数问题源于无效/缺失的 YAML Front Matter、配置错误的 _config.yml 文件或有问题的站点内容。
       value: |-
-        - Rspress Theme AIm version:
-        - Git repository URL:
-        - URL to the page with the problem:
-        - Operating system:
-        - Browser version:
+        - Rspress Theme AIm version / 版本:
+        - Git repository URL / 仓库地址:
+        - URL to the page with the problem / 问题页面地址:
+        - Operating system / 操作系统:
+        - Browser version / 浏览器版本:
     validations:
       required: true
 
   - type: textarea
     id: what-happened
     attributes:
-      label: What happened?
+      label: What happened? / 发生了什么？
       description: |
         Describe the problem **in detail**. For example:
+        **详细**描述问题。例如：
 
-        - What is missing?
-        - What error do you see? Attach the error log if available.
+        - What is missing? / 缺少了什么？
+        - What error do you see? Attach the error log if available. / 你看到了什么错误？如果有的话，附上错误日志。
     validations:
       required: true
 
   - type: textarea
     id: expected-behavior
     attributes:
-      label: Expected behavior
+      label: Expected behavior / 预期行为
       description: |
         Please describe the expected behavior and the actual result you got.
+        请描述预期行为和你得到的实际结果。
       placeholder: >
         What is it you expected to happen? This should be a description of how the
         functionality you tried to use is supposed to work.
+        你期望发生什么？这应该是对你尝试使用的功能应该如何工作的描述。
     validations:
       required: true
 
   - type: textarea
     id: steps-to-reproduce
     attributes:
-      label: Steps to reproduce the behavior
+      label: Steps to reproduce the behavior / 复现步骤
       description: |
         Describe the steps you took for this problem to come up. Such as: you installed
         the theme, customized rspress.config.ts, and added your own posts.
+        描述你采取的导致此问题的步骤。例如：你安装了主题，自定义了 rspress.config.ts，并添加了自己的文章。
 
         Then provide a complete log of the error you got, and include this output in the filed issue.
+        然后提供你得到的错误的完整日志，并将此输出包含在提交的 Issue 中。
 
         Screenshots can also be included if they help illustrate a behavior.
+        如果截图有助于说明行为，也可以包含在内。
     validations:
       required: true
 
   - type: textarea
     id: other
     attributes:
-      label: Other
+      label: Other / 其他
       description: |
         Please provide a code repository, gist, code snippet, sample files,
         screenshots, or anything else you think will aid in reproducing the issue.
+        请提供代码仓库、gist、代码片段、示例文件、截图或任何其他你认为有助于复现问题的内容。
     validations:
       required: false

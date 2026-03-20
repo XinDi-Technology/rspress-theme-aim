@@ -10,10 +10,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - 添加自动导航功能文档，说明如何使用 order frontmatter 管理文档顺序
+- 添加 CONTRIBUTING.md 贡献指南，包含行为准则、贡献流程、提交规范等
+- 添加代码规范配置（.editorconfig、.prettierrc、.eslintrc.js）
+- 添加 lint 和 format 脚本到 package.json
+- 添加开发者文档目录（docs/developer/），包含代码规范说明和贡献指南
+- 添加 SECURITY.md 安全策略文档
+- 添加 Issue 和 PR 模板，标准化问题报告和代码贡献流程
 
 ### Changed
 
 - 使用 Rspress 内置自动导航功能，删除 _meta.json 文件，简化 _nav.json 配置
+- 更新 README.md 中的 Rspress 版本号为 2.0.6
+- 在 README.md 中添加贡献指南链接
 
 ## [2.3.0] - 2026-03-18
 
