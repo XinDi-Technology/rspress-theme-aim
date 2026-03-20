@@ -15,7 +15,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - 简化 README.md，只引导用户使用轻量级模板
 - 移除完整模板的 template 功能说明，改为普通仓库
-- 添加"其他获取方式"说明（Releases 下载、在线预览）
 - 添加用户名仓库（如 username.github.io）的特殊配置说明
 
 ## [2.4.0] - 2026-03-21

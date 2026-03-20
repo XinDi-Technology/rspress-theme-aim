@@ -74,26 +74,9 @@ jobs:
           cp ../docs/zh/index.md docs/zh/
           cp ../docs/en/index.md docs/en/
           
-          # Create empty blog index files
-          cat > docs/zh/blog/index.mdx << 'EOF'
-          ---
-          title: 博客
-          ---
-          
-          import { Blog } from '../../theme/components/Blog';
-          
-          <Blog />
-          EOF
-          
-          cat > docs/en/blog/index.mdx << 'EOF'
-          ---
-          title: Blog
-          ---
-          
-          import { Blog } from '../../theme/components/Blog';
-          
-          <Blog />
-          EOF
+          # Sync blog index files
+          cp ../docs/zh/blog/index.mdx docs/zh/blog/
+          cp ../docs/en/blog/index.mdx docs/en/blog/
           
           # Sync workflows
           mkdir -p .github/workflows
