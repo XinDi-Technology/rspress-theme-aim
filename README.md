@@ -42,21 +42,32 @@
 
 ---
 
-## 🚀 快速开始（作为模板使用）
+## 🚀 快速开始
 
-> 目标：在 **完全不使用本地环境** 的前提下，基于本模板创建你的 Rspress 文档站，并部署到 GitHub Pages。
+> 目标：在 **完全不使用本地环境** 的前提下，创建你的 Rspress 文档站，并部署到 GitHub Pages。
 
-### 1. 使用本模板创建你的仓库
+### 使用模板创建项目
 
-1. 打开本仓库主页：`https://github.com/XinDi-Technology/rspress-theme-aim`
-2. 点击右上角 **Use this template → Create a new repository**
+我们提供 **轻量级模板** 供你快速开始：
+
+👉 **[点击这里使用模板](https://github.com/XinDi-Technology/rspress-theme-aim-template/generate)**
+
+> 💡 **同步机制**：轻量级模板会自动同步主仓库的核心更新（主题、配置等），确保你始终使用最新版本。
+
+---
+
+### 使用步骤
+
+#### 1. 使用模板创建仓库
+
+1. 点击上面的链接，或访问 `https://github.com/XinDi-Technology/rspress-theme-aim-template`
+2. 点击 **Use this template → Create a new repository**
 3. 填写：
    - **Repository name**：比如 `my-rspress-site`
    - **Public / Private**：建议 Public（Pages 更简单）
 4. 点击 **Create repository**。
-5. 你的新仓库已经包含和本仓库一样的所有文件。
 
-### 2. 修改 `base` 为你的仓库名（重要）
+#### 2. 修改 `base` 为你的仓库名（重要）
 
 1. 在新仓库中打开 `rspress.config.ts`。
 2. 找到这一行：
@@ -65,42 +76,76 @@
 base: '/rspress-theme-aim/',
 ```
 
+**根据你的仓库名称修改：**
+
+<details>
+<summary><b>情况 A：普通仓库名（如 my-rspress-site）</b></summary>
+
 改成：
-
-```ts
-base: '/<你的仓库名>/',
-```
-
-例如你的仓库叫 my-rspress-site，就写：
 
 ```ts
 base: '/my-rspress-site/',
 ```
 
+访问地址：`https://<你的用户名>.github.io/my-rspress-site/`
+
+</details>
+
+<details>
+<summary><b>情况 B：用户名仓库（如 zhang-nianqiang.github.io）</b></summary>
+
+改成：
+
+```ts
+base: '/',
+```
+
+访问地址：`https://<你的用户名>.github.io/`
+
+> [!TIP]
+> 当仓库名为 `<用户名>.github.io` 格式时，`base` 必须设为 `/`，这是 GitHub Pages 的特殊规则。
+
+</details>
+
 > [!IMPORTANT]
-> GitHub Pages 的访问路径通常是：
-> https://<你的 GitHub 用户名>.github.io/<你的仓库名>/
-> base 必须与 <你的仓库名> 保持一致，静态资源和路由才会正常工作。
+> GitHub Pages 的访问路径：
+> - 普通仓库：`https://<用户名>.github.io/<仓库名>/` → `base: '/<仓库名>/'`
+> - 用户名仓库：`https://<用户名>.github.io/` → `base: '/'`
+>
+> base 必须与访问路径保持一致，静态资源和路由才会正常工作。
 
 提交变更到 main 分支。
 
-### 3. 开启 GitHub Pages（使用 Actions）
+#### 3. 开启 GitHub Pages（使用 Actions）
 
 在新仓库中进入 Settings → Pages。
 在 Build and deployment 区域：
 Source：选择 GitHub Actions。
 保存设置。
 
-### 4. 触发一次部署并访问站点
+#### 4. 触发一次部署并访问站点
 
 在仓库中任意修改一个小文件（比如 README.md），提交到 main。
 
 打开 Actions 页面，等待 Deploy Rspress to GitHub Pages 工作流变绿 ✅。
 
-回到 Settings → Pages，你会看到站点 URL，形如：
+回到 Settings → Pages，你会看到站点 URL：
 
-https://<你的 GitHub 用户名>.github.io/<你的仓库名>/
+- **普通仓库**：`https://<用户名>.github.io/<仓库名>/`
+- **用户名仓库**：`https://<用户名>.github.io/`
+
 打开该链接，即可看到你的 Rspress 文档站。
+
+---
+
+### 📥 其他获取方式
+
+| 方式 | 说明 | 适用场景 |
+|------|------|---------|
+| **[Releases 下载](https://github.com/XinDi-Technology/rspress-theme-aim/releases)** | 下载特定版本源码 | 本地开发、离线使用、特定版本 |
+| **[在线预览](https://xindi-technology.github.io/rspress-theme-aim/)** | 查看完整示例 | 学习、参考 |
+
+---
 
 📁 项目结构 Project Structure
 

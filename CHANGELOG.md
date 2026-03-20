@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+
+- 添加 sync-template.yml workflow，自动同步核心文件到轻量级模板仓库
+
+### Changed
+
+- 简化 README.md，只引导用户使用轻量级模板
+- 移除完整模板的 template 功能说明，改为普通仓库
+- 添加"其他获取方式"说明（Releases 下载、在线预览）
+- 添加用户名仓库（如 username.github.io）的特殊配置说明
+
 ## [2.4.0] - 2026-03-21
 
 ### Added
