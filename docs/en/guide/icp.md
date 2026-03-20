@@ -1,3 +1,7 @@
+---
+order: 7
+---
+
 # ICP Record
 
 Rspress Theme AIm provides built-in ICP record information display functionality to meet Chinese compliance requirements.

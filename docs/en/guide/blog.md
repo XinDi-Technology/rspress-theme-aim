@@ -1,3 +1,7 @@
+---
+order: 2
+---
+
 # Blog Feature Usage Guide
 
 Rspress Theme AIm provides complete blog functionality with article management, categories, tags, and multi-language support.

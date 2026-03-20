@@ -1,3 +1,7 @@
+---
+order: 1
+---
+
 # Home Features
 
 Rspress provides a built-in `HomeFeature` component that allows you to easily create feature showcases on the homepage.

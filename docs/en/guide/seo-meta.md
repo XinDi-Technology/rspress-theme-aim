@@ -1,3 +1,7 @@
+---
+order: 5
+---
+
 # SEO Meta Tags
 
 Rspress Theme AIm provides support for SEO meta tags to help improve your site's visibility in search engines.

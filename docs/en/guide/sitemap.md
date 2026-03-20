@@ -1,3 +1,7 @@
+---
+order: 3
+---
+
 # Sitemap
 
 Rspress provides an official `@rspress/plugin-sitemap` plugin that helps you generate sitemap.xml files for search engine optimization.

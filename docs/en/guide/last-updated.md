@@ -1,3 +1,7 @@
+---
+order: 10
+---
+
 # Last Updated Feature
 
 Rspress has a built-in "Last Updated" feature that displays the last modification time of the document based on Git history.

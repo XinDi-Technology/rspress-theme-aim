@@ -1,60 +1,11 @@
 [
   {
     "text": "Guide",
-    "items": [
-      {
-        "text": "Getting Started",
-        "link": "/guide/"
-      },
-      {
-        "text": "Home Features",
-        "link": "/guide/home-features"
-      },
-      {
-        "text": "Blog Feature",
-        "link": "/guide/blog"
-      },
-      {
-        "text": "Copyright",
-        "link": "/guide/copyright"
-      },
-      {
-        "text": "ICP Filing",
-        "link": "/guide/icp"
-      },
-      {
-        "text": "Public Security Filing",
-        "link": "/guide/gongan"
-      },
-      {
-        "text": "Sitemap",
-        "link": "/guide/sitemap"
-      },
-      {
-        "text": "Bing Webmasters",
-        "link": "/guide/bing-webmasters"
-      },
-      {
-        "text": "SEO Meta",
-        "link": "/guide/seo-meta"
-      },
-      {
-        "text": "Edit Link",
-        "link": "/guide/edit-link"
-      },
-      {
-        "text": "Last Updated",
-        "link": "/guide/last-updated"
-      },
-      {
-        "text": "Upgrade",
-        "link": "/guide/upgrade"
-      }
-    ]
+    "link": "/guide/"
   },
   {
     "text": "Blog",
-    "link": "/blog"
+    "link": "/blog/"
   },
   {
     "text": "Markdown Test",

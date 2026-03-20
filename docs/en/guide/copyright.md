@@ -1,3 +1,7 @@
+---
+order: 6
+---
+
 # Copyright Information
 
 Rspress Theme AIm provides a built-in copyright information display feature at the bottom of the page, which can be configured according to your needs.

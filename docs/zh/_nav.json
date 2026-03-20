@@ -1,60 +1,11 @@
 [
   {
     "text": "指南",
-    "items": [
-      {
-        "text": "快速开始",
-        "link": "/guide/"
-      },
-      {
-        "text": "首页特性",
-        "link": "/guide/home-features"
-      },
-      {
-        "text": "博客功能",
-        "link": "/guide/blog"
-      },
-      {
-        "text": "版权信息",
-        "link": "/guide/copyright"
-      },
-      {
-        "text": "ICP 备案",
-        "link": "/guide/icp"
-      },
-      {
-        "text": "公安备案",
-        "link": "/guide/gongan"
-      },
-      {
-        "text": "站点地图",
-        "link": "/guide/sitemap"
-      },
-      {
-        "text": "Bing Webmasters",
-        "link": "/guide/bing-webmasters"
-      },
-      {
-        "text": "SEO 元数据",
-        "link": "/guide/seo-meta"
-      },
-      {
-        "text": "编辑此页",
-        "link": "/guide/edit-link"
-      },
-      {
-        "text": "最后更新时间",
-        "link": "/guide/last-updated"
-      },
-      {
-        "text": "版本升级",
-        "link": "/guide/upgrade"
-      }
-    ]
+    "link": "/guide/"
   },
   {
     "text": "博客",
-    "link": "/blog"
+    "link": "/blog/"
   },
   {
     "text": "Markdown 测试",

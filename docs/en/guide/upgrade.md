@@ -1,3 +1,7 @@
+---
+order: 11
+---
+
 # Upgrade Guide
 
 This guide explains how to upgrade the template theme features and Rspress version.

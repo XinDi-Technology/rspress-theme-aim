@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.4.0] - 2026-03-21
+
+### Added
+
+- 添加自动导航功能文档，说明如何使用 order frontmatter 管理文档顺序
+
+### Changed
+
+- 使用 Rspress 内置自动导航功能，删除 _meta.json 文件，简化 _nav.json 配置
+
 ## [2.3.0] - 2026-03-18
 
 ### Added

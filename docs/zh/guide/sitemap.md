@@ -1,3 +1,7 @@
+---
+order: 3
+---
+
 # Sitemap 站点地图
 
 本主题已集成 `@rspress/plugin-sitemap` 插件，自动生成用于 SEO 的站点地图（sitemap），有利于搜索引擎抓取。

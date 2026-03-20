@@ -1,3 +1,7 @@
+---
+order: 9
+---
+
 # Edit Link Feature
 
 Rspress has a built-in "Edit this page" feature that allows users to directly jump to GitHub to edit the current document page.

@@ -1,3 +1,7 @@
+---
+order: 8
+---
+
 # Public Security Record
 
 Rspress Theme AIm provides built-in public security record information display functionality to meet Chinese compliance requirements.

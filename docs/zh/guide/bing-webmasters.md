@@ -1,3 +1,7 @@
+---
+order: 4
+---
+
 # Bing Webmasters 配置
 
 本主题支持通过 Meta 标签验证方式接入 Bing Webmaster Tools，帮助监控网站在 Bing 搜索引擎中的表现。

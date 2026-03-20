@@ -1,3 +1,7 @@
+---
+order: 4
+---
+
 # Bing Webmasters
 
 Rspress Theme AIm provides support for Bing Webmasters verification to help improve your site's visibility in Bing search results.
