@@ -94,7 +94,10 @@
 ### 步骤 1：创建模板仓库
 
 1. 在 GitHub 创建新仓库：`rspress-theme-aim-template`
-2. 初始化为**空仓库**（不要勾选任何初始化选项）
+2. **勾选初始化选项**：
+   - ✅ Add a README file (可选)
+   - ✅ Add .gitignore (可选)
+   - ✅ Choose a license (**必须**，推荐 MIT License)
 3. 在 Settings 中勾选 "Template repository"
 
 ### 步骤 2：创建 Personal Access Token
@@ -226,7 +229,7 @@ fatal: empty ident name (for <runner@...>) not allowed
 
 ---
 
-### 问题 2：空仓库无法 clone
+### 问题 2：仓库分支处理
 
 **错误信息：**
 ```
@@ -234,22 +237,17 @@ error: src refspec main does not match any
 error: failed to push some refs to '...'
 ```
 
-**原因：** 模板仓库是空的，没有 main 分支，无法 clone。
+**原因：** 仓库没有 main 分支，无法 checkout。
 
-**解决方案：** 使用 `git init` 初始化，而不是 `git clone`：
+**解决方案：** 脚本已经包含分支处理逻辑：
 ```yaml
-- name: Sync core files
-  run: |
-    mkdir -p template-repo
-    cd template-repo
-    git init
-    git remote add origin https://x-access-token:${TOKEN}@github.com/xxx.git
-    
-    if git fetch origin 2>/dev/null; then
-      git checkout -b main origin/main 2>/dev/null || git checkout -b main
-    else
-      git checkout -b main
-    fi
+if git fetch origin 2>/dev/null; then
+  echo "Repository has content, checking out main branch..."
+  git checkout -b main origin/main 2>/dev/null || git checkout -b main
+else
+  echo "Repository is empty, creating new main branch..."
+  git checkout -b main
+fi
 ```
 
 ---
