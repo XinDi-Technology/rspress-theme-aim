@@ -6,13 +6,43 @@
 
 ## 🎯 概述
 
-当主仓库发布新版本时，会自动同步核心文件到轻量级模板仓库，确保模板始终保持最新。
+当主仓库发布新版本或手动触发时，会自动同步核心文件到轻量级模板仓库，确保模板始终保持最新。
+
+---
+
+## 🚀 触发方式
+
+同步功能支持两种触发方式：
+
+### 方式 1：发布新版本自动触发
+
+当主仓库发布新的 Release 时，会自动触发同步：
+
+1. 在主仓库创建新的 Release
+2. 发布后自动触发 `sync-template.yml` workflow
+3. 同步完成后，模板仓库会显示类似 commit：
+   ```
+   sync: update from rspress-theme-aim@v2.5.0
+   ```
+
+### 方式 2：手动触发
+
+在 Actions 页面手动运行同步：
+
+1. 进入主仓库 Actions 标签页
+2. 选择 "Sync to Template Repository" workflow
+3. 点击 "Run workflow" → "Run workflow"
+4. 等待执行完成
+5. 同步完成后，模板仓库会显示类似 commit：
+   ```
+   sync: update from rspress-theme-aim@latest
+   ```
 
 ---
 
 ## 📋 同步的文件
 
-### 自动同步的文件
+### 核心文件
 
 | 文件/目录 | 说明 |
 |----------|------|
@@ -26,34 +56,36 @@
 | `.eslintrc.js` | ESLint 配置 |
 | `.prettierrc` | Prettier 配置 |
 | `.gitignore` | Git 忽略配置 |
-| `LICENSE` | 许可证 |
-| `docs/zh/guide/` | 中文指南文档 |
-| `docs/en/guide/` | 英文指南文档 |
-| `docs/public/` | 公共资源 |
-| `docs/zh/_nav.json` | 中文导航 |
-| `docs/en/_nav.json` | 英文导航 |
+
+### 文档文件
+
+| 文件 | 说明 |
+|------|------|
+| `docs/zh/guide/index.md` | 中文指南首页 |
+| `docs/zh/guide/auto-navigation.md` | 自动导航说明 |
+| `docs/zh/guide/blog.md` | 博客功能说明 |
+| `docs/en/guide/index.md` | 英文指南首页 |
+| `docs/en/guide/auto-navigation.md` | 自动导航说明 |
+| `docs/en/guide/blog.md` | 博客功能说明 |
+| `docs/zh/_nav.json` | 中文导航配置 |
+| `docs/en/_nav.json` | 英文导航配置 |
 | `docs/zh/index.md` | 中文首页 |
 | `docs/en/index.md` | 英文首页 |
 | `docs/zh/blog/index.mdx` | 中文博客首页 |
 | `docs/en/blog/index.mdx` | 英文博客首页 |
+| `docs/public/*` | 公共资源（图片等） |
+
+### Workflow 文件
+
+| 文件 | 说明 |
+|------|------|
 | `.github/workflows/deploy.yml` | 部署 workflow |
 
-### 不同步的文件
+### 自动生成的文件
 
-| 文件/目录 | 说明 |
-|----------|------|
-| `docs/zh/blog/welcome.mdx` | 示例博客文章 |
-| `docs/en/blog/welcome.mdx` | 示例博客文章 |
-| `docs/zh/developer/` | 开发者文档 |
-| `docs/en/developer/` | 开发者文档 |
-| `CONTRIBUTING.md` | 贡献指南 |
-| `SECURITY.md` | 安全策略 |
-| `.github/ISSUE_TEMPLATE/` | Issue 模板 |
-| `.github/PULL_REQUEST_TEMPLATE.md` | PR 模板 |
-| `.github/workflows/ci.yml` | CI workflow |
-| `.github/workflows/release.yml` | Release workflow |
-| `.github/workflows/sync-template.yml` | 同步 workflow |
-| `.github/dependabot.yml` | Dependabot 配置 |
+| 文件 | 说明 |
+|------|------|
+| `README.md` | 模板专用 README（包含快速开始指南） |
 
 ---
 
@@ -79,43 +111,93 @@
    - **Scopes**: **必须勾选以下两项**
      - ✅ `repo`（完整的仓库访问权限）
      - ✅ `workflow`（更新 workflow 文件权限）
-4. 点击 "Generate token"
-5. **重要**：复制并保存 token，离开页面后无法再次查看
+4. 点击 Generate token
+5. 复制并保存 token（只显示一次）
 
-### 步骤 3：添加 Secret 到主仓库
+### 步骤 3：配置 Secret
 
 1. 进入主仓库 Settings → Secrets and variables → Actions
-2. 点击 "New repository secret"
-3. 设置：
-   - **Name**: `TEMPLATE_REPO_TOKEN`
-   - **Value**: 粘贴刚才创建的 token
-4. 点击 "Add secret"
+2. 点击 New repository secret
+3. Name: `TEMPLATE_REPO_TOKEN`
+4. Secret: 粘贴刚才创建的 Token
+5. 点击 Add secret
 
-### 步骤 4：测试同步
-
-#### 方法 1：手动触发
-
-1. 进入主仓库的 Actions 页面
-2. 找到 "Sync to Template Repository" workflow
-3. 点击 "Run workflow"
-4. 点击 "Run workflow" 确认
-
-#### 方法 2：发布新版本
-
-发布新版本时，同步会自动触发。
-
----
-
-## 🔍 验证同步
+### 步骤 4：验证同步
 
 同步完成后，检查模板仓库：
 
 1. 进入模板仓库
 2. 查看最新的 commit，应该看到类似：
    ```
+   sync: update from rspress-theme-aim@latest
+   ```
+   或
+   ```
    sync: update from rspress-theme-aim@v2.5.0
    ```
 3. 检查文件是否已更新
+
+**同步成功的影响：**
+- ✅ 模板仓库包含最新的主题文件和配置
+- ✅ 用户使用模板创建项目时获得最新版本
+- ✅ 基础文档（guide、blog 首页）已更新
+
+**同步失败的影响：**
+- ❌ 模板仓库停留在旧版本
+- ❌ 用户无法获得最新的功能和修复
+- ❌ 需要检查 Actions 日志排查问题
+
+---
+
+## 📊 同步流程
+
+```
+主仓库发布新版本 / 手动触发
+            ↓
+    触发 sync-template.yml
+            ↓
+      检出主仓库代码
+            ↓
+      配置 Git 身份
+            ↓
+      初始化模板仓库
+            ↓
+      同步核心文件（theme、config）
+            ↓
+      同步文档文件（guide、blog、public）
+            ↓
+      同步 workflow 文件
+            ↓
+      生成模板 README
+            ↓
+      提交并推送更改
+            ↓
+        同步完成
+```
+
+---
+
+## 🛠️ 自定义同步
+
+### 添加同步文件
+
+编辑 `.github/workflows/sync-template.yml`：
+
+```yaml
+- name: Sync core files
+  run: |
+    cd template-repo
+    # 添加需要同步的文件
+    cp ../your-file.txt .
+```
+
+### 移除同步文件
+
+注释掉或删除相应的 `cp` 命令。
+
+### 修改 README 模板
+
+编辑 workflow 中的 README 生成部分。
 
 ---
 
@@ -191,71 +273,11 @@ error: failed to push some refs to '...'
 
 ---
 
-### 问题 4：强制推送覆盖用户修改
+### 问题 4：模板仓库包含不需要的文件
 
-**潜在问题：** 使用 `git push --force` 会覆盖模板仓库中的所有用户修改。
+**原因：** 同步脚本没有过滤不需要的文件。
 
-**解决方案：** 智能判断仓库状态，避免强制推送：
-```yaml
-- name: Commit and push changes
-  run: |
-    cd template-repo
-    git add -A
-    git commit -m "sync: ..." || echo "No changes to commit"
-    
-    if git rev-parse --verify origin/main >/dev/null 2>&1; then
-      git push origin main
-    else
-      git push -u origin main
-    fi
-```
-
----
-
-## 📊 同步流程
-
-```
-主仓库发布新版本 / 手动触发
-            ↓
-    触发 sync-template.yml
-            ↓
-      检出主仓库代码
-            ↓
-      配置 Git 身份
-            ↓
-      初始化模板仓库
-            ↓
-      同步核心文件
-            ↓
-      生成模板 README
-            ↓
-      提交并推送更改
-            ↓
-        同步完成
-```
-
----
-
-## 🛠️ 自定义同步
-
-### 修改同步的文件
-
-编辑 `.github/workflows/sync-template.yml`：
-
-```yaml
-- name: Sync core files
-  run: |
-    cd template-repo
-    # 添加需要同步的文件
-    cp ../your-file.txt .
-    
-    # 删除不需要同步的文件
-    # 注释掉相应的 cp 命令即可
-```
-
-### 修改 README 模板
-
-编辑 workflow 中的 README 生成部分。
+**解决方案：** 脚本已经优化，现在只同步指定的文件，不会包含不需要的文件。
 
 ---
 
