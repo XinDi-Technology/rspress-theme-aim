@@ -5,39 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [2.5.0] - 2026-03-21
 
 ### Added
 
 - 添加 sync-template.yml workflow，自动同步核心文件到轻量级模板仓库
-- 添加 `.github/SYNC_TEMPLATE.md` 文档，记录模板同步设置和常见问题解决方案
-
-### Fixed
-
-- 修复 sync-template.yml 中博客首页 import 路径错误，改为直接同步主仓库文件
-- 修复 sync-template.yml 同步了不需要的 developer 目录，添加删除命令确保只同步基础文件
 
 ### Changed
 
-- 简化 README.md，只引导用户使用轻量级模板
-- 移除完整模板的 template 功能说明，改为普通仓库
-- 添加用户名仓库（如 username.github.io）的特殊配置说明
-- 重新梳理 sync-template.yml 同步逻辑，明确同步范围：
-  - 只同步基础 guide 文档（index.md、auto-navigation.md、blog.md）
-  - 不同步详细教程文档
-  - 不同步 developer 目录
-  - 不同步示例博客文章
-- 优化 sync-template.yml 同步流程：
-  - 移除 LICENSE 文件的同步（模板仓库创建时已包含）
-  - 移除 auto-navigation.md 和 blog.md 的同步
-  - 简化 Git 操作，提高同步效率
-- 更新 `.github/SYNC_TEMPLATE.md` 文档：
-  - 移除 LICENSE 文件的同步说明
-  - 移除 auto-navigation.md 和 blog.md 的同步说明
-  - 修正触发方式标题乱码
-  - 更新同步流程图，移除不存在的步骤
-  - 更新常见问题解决方案
-  - 添加 GitHub Pages 配置步骤
+- 配合新功能更改 README.md，引导用户使用轻量级模板
+- 移除本仓库的 template 功能，改为普通仓库
 
 ## [2.4.0] - 2026-03-21
 
