@@ -99,6 +99,10 @@
    - ✅ Add .gitignore (可选)
    - ✅ Choose a license (**必须**，推荐 MIT License)
 3. 在 Settings 中勾选 "Template repository"
+4. **配置 GitHub Pages**（重要）：
+   - 进入 Settings → Pages
+   - Source 选择：**GitHub Actions**
+   - 保存设置
 
 ### 步骤 2：创建 Personal Access Token
 
