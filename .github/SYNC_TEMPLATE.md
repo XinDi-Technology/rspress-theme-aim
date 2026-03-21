@@ -62,11 +62,7 @@
 | 文件 | 说明 |
 |------|------|
 | `docs/zh/guide/index.md` | 中文指南首页 |
-| `docs/zh/guide/auto-navigation.md` | 自动导航说明 |
-| `docs/zh/guide/blog.md` | 博客功能说明 |
 | `docs/en/guide/index.md` | 英文指南首页 |
-| `docs/en/guide/auto-navigation.md` | 自动导航说明 |
-| `docs/en/guide/blog.md` | 博客功能说明 |
 | `docs/zh/_nav.json` | 中文导航配置 |
 | `docs/en/_nav.json` | 英文导航配置 |
 | `docs/zh/index.md` | 中文首页 |

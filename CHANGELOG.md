@@ -29,12 +29,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - 不同步示例博客文章
 - 优化 sync-template.yml 同步流程：
   - 移除 LICENSE 文件的同步（模板仓库创建时已包含）
+  - 移除 auto-navigation.md 和 blog.md 的同步
   - 简化 Git 操作，提高同步效率
 - 更新 `.github/SYNC_TEMPLATE.md` 文档：
   - 移除 LICENSE 文件的同步说明
+  - 移除 auto-navigation.md 和 blog.md 的同步说明
   - 修正触发方式标题乱码
   - 更新同步流程图，移除不存在的步骤
   - 更新常见问题解决方案
+  - 添加 GitHub Pages 配置步骤
 
 ## [2.4.0] - 2026-03-21
 

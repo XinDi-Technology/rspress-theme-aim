@@ -59,8 +59,8 @@ jobs:
           mkdir -p docs/zh/guide docs/zh/blog docs/en/guide docs/en/blog docs/public
           
           # Sync basic guide docs only
-          cp ../docs/zh/guide/{index,auto-navigation,blog}.md docs/zh/guide/ 2>/dev/null || true
-          cp ../docs/en/guide/{index,auto-navigation,blog}.md docs/en/guide/ 2>/dev/null || true
+          cp ../docs/zh/guide/index.md docs/zh/guide/ 2>/dev/null || true
+          cp ../docs/en/guide/index.md docs/en/guide/ 2>/dev/null || true
           
           # Sync public assets
           cp -r ../docs/public/* docs/public/ 2>/dev/null || true
