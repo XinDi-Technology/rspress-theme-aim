@@ -14,12 +14,12 @@
 
 同步功能支持两种触发方式：
 
-### 方式 1：发布新版本自动触发
+### 方式 1：推送 tag 自动触发
 
-当主仓库发布新的 Release 时，会自动触发同步：
+当主仓库推送新的 tag（如 `v2.5.0`）时，会自动触发同步：
 
-1. 在主仓库创建新的 Release
-2. 发布后自动触发 `sync-template.yml` workflow
+1. 在主仓库推送新的 tag
+2. 自动触发 `sync-template.yml` workflow
 3. 同步完成后，模板仓库会显示类似 commit：
    ```
    sync: update from rspress-theme-aim@v2.5.0
@@ -155,7 +155,7 @@
 ## 📊 同步流程
 
 ```
-主仓库发布新版本 / 手动触发
+主仓库推送 tag / 手动触发
             ↓
     触发 sync-template.yml
             ↓

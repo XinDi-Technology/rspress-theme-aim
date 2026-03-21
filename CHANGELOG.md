@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.5.1] - 2026-03-21
+
+### Fixed
+
+- 修复 sync-template.yml 触发方式问题：将触发条件从 `release: types: [published]` 改为 `push: tags: ['v*']`，解决 release.yml 使用 GitHub API 创建 Release 时无法触发同步的问题
+
 ## [2.5.0] - 2026-03-21
 
 ### Added
