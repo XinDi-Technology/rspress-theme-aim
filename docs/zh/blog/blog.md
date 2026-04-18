@@ -118,7 +118,7 @@ function hello() {
 
 [Rspress 官网](https://rspress.rs)
 
-![图片描述](/images/example.png)
+![新地科技](https://cdn.zhangnianqiang.top/uploads/images/gallery/2026-03/wKqebScvKli74q7U-QjymrmD46M.png)
 ```
 
 ## 配置博客导航
