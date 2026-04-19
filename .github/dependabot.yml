@@ -1,4 +1,4 @@
-version: 2
+version: 2 
 updates:
   - package-ecosystem: "npm"
     directory: "/"
@@ -18,7 +18,7 @@ updates:
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 5
-    labels:
+    labels: # Not n
       - "dependencies"
       - "github-actions"
     commit-message:
