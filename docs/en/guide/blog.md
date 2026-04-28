@@ -116,7 +116,7 @@ function hello() {
 
 [Rspress Official Website](https://rspress.rs)
 
-![Image Description](/images/example.png)
+![新地科技](https://cdn.zhangnianqiang.top/uploads/images/gallery/2026-03/wKqebScvKli74q7U-QjymrmD46M.png)
 ```
 
 ## Blog Homepage Configuration
