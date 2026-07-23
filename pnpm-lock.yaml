@@ -13,8 +13,8 @@ importers:
         version: 2.0.12(@rspack/core@2.0.4(@swc/helpers@0.5.21))(@types/mdast@4.0.4)(@types/react@19.2.14)(micromark-util-types@2.0.2)(micromark@4.0.2)
     devDependencies:
       '@rspress/plugin-sitemap':
-        specifier: ^2.0.12
-        version: 2.0.12(@rspress/core@2.0.12(@rspack/core@2.0.4(@swc/helpers@0.5.21))(@types/mdast@4.0.4)(@types/react@19.2.14)(micromark-util-types@2.0.2)(micromark@4.0.2))
+        specifier: ^2.0.18
+        version: 2.0.18(@rspress/core@2.0.12(@rspack/core@2.0.4(@swc/helpers@0.5.21))(@types/mdast@4.0.4)(@types/react@19.2.14)(micromark-util-types@2.0.2)(micromark@4.0.2))
       '@types/node':
         specifier: ^22.8.1
         version: 22.19.15
@@ -217,8 +217,8 @@ packages:
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
 
-  '@rspress/plugin-sitemap@2.0.12':
-    resolution: {integrity: sha512-gdXkw51jANjGvH4TR62HCekKGiYGWsCgswmDvn/ZSq4eIrdtGcjHm3/MOJ3cqRuH0oHzb2tFV3Y7f9Ml5H6Oyg==}
+  '@rspress/plugin-sitemap@2.0.18':
+    resolution: {integrity: sha512-XfaXzZx+ASN9OMTc0fOvW8QmbmyCyDWkO8xJj4XF4E0YJtsu7j/65+v8/KXXdwpywOfUIQ6M94/meRTy2urNmQ==}
     engines: {node: ^20.19.0 || >=22.12.0}
     peerDependencies:
       '@rspress/core': ^2.0.10
@@ -2085,7 +2085,7 @@ snapshots:
       - micromark-util-types
       - supports-color
 
-  '@rspress/plugin-sitemap@2.0.12(@rspress/core@2.0.12(@rspack/core@2.0.4(@swc/helpers@0.5.21))(@types/mdast@4.0.4)(@types/react@19.2.14)(micromark-util-types@2.0.2)(micromark@4.0.2))':
+  '@rspress/plugin-sitemap@2.0.18(@rspress/core@2.0.12(@rspack/core@2.0.4(@swc/helpers@0.5.21))(@types/mdast@4.0.4)(@types/react@19.2.14)(micromark-util-types@2.0.2)(micromark@4.0.2))':
     dependencies:
       '@rspress/core': 2.0.12(@rspack/core@2.0.4(@swc/helpers@0.5.21))(@types/mdast@4.0.4)(@types/react@19.2.14)(micromark-util-types@2.0.2)(micromark@4.0.2)
 
