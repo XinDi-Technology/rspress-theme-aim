@@ -13,7 +13,7 @@
     "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,css,md}\""
   },
   "dependencies": {
-    "@rspress/core": "^2.0.12"
+    "@rspress/core": "^2.0.19"
   },
   "devDependencies": {
     "@rspress/plugin-sitemap": "^2.0.12",
